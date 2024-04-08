@@ -30,11 +30,9 @@ export default function Information() {
     },
   ];
   return (
-    <LampContainer className="w-full h-full flex flex-col justify-center items-center gap-4">
+    <LampContainer className="w-full h-full flex flex-col justify-center items-center gap-4 mt-10">
       <h1 className="text-white md:text-3xl">SKILLS</h1>
-      <div className="w-full flex gap-6 justify-center">
-        <HoverEffect items={items} isContentCentered={true} />
-      </div>
+      <HoverEffect items={items} isContentCentered={true} />
     </LampContainer>
   );
 }
