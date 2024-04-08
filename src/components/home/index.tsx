@@ -1,5 +1,6 @@
 import { Meteors } from "../ui/meteors";
 import Banner from "./banner";
+import Information from "./information";
 import Profile from "./profile";
 
 export default function HomePage() {
@@ -10,6 +11,7 @@ export default function HomePage() {
       </div>
       <Banner />
       <Profile />
+      <Information />
     </div>
   );
 }
