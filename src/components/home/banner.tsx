@@ -1,12 +1,10 @@
 import { Meteors } from "../ui/meteors";
 import Card from "../ui/card";
+import { TextGenerateEffect } from "../ui/text-generate-effect.";
 
 export default function Banner() {
   return (
-    <div className="h-screen md:h-screen w-full flex relative">
-      <div className="absolute w-full h-full overflow-hidden ">
-        <Meteors number={11} className="" />
-      </div>
+    <div className="h-screen md:h-screen w-full flex">
       <MainScreen />
     </div>
   );
@@ -22,13 +20,14 @@ function MainScreen() {
               <span>Hello, I'm</span>
               <span className="-mt-3 md:-mt-12">Diaz Nugraha</span>
             </h1>
-            <p className="text-[#CCCCCC] text-[15px] md:text-[20px] w-[80%]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+            <TextGenerateEffect
+              words="Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
               nostrum iste quibusdam aliquam maxime reiciendis odio nihil totam
               neque nesciunt quas, libero nulla voluptates velit excepturi quos
               quam. Non minus odit ad atque doloribus. Porro laudantium culpa
-              excepturi eligendi nemo.
-            </p>
+              excepturi eligendi nemo."
+              className="text-[#CCCCCC] text-[15px] md:text-[20px] w-[80%]"
+            />
           </div>
 
           <div className="mt-3 md:mt-5 flex flex-col gap-2 md:gap-4 text-white text-[12px] md:text-[18px]">
