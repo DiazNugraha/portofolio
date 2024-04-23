@@ -1,5 +1,6 @@
 import { Meteors } from "../ui/meteors";
 import Banner from "./banner";
+import Experience from "./experience";
 import Information from "./information";
 import Profile from "./profile";
 
@@ -10,7 +11,8 @@ export default function HomePage() {
         <Meteors number={11} className="" />
       </div>
       <Banner />
-      <Profile />
+      {/* <Profile /> */}
+      <Experience />
       <Information />
     </div>
   );
