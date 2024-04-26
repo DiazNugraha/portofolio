@@ -25,7 +25,7 @@ export default function Information() {
     },
     {
       title: "PLATFORM",
-      description: "Web + Android",
+      description: "Web",
       img: "test",
     },
   ];

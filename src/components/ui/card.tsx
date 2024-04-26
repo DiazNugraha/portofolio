@@ -30,6 +30,7 @@ export default function Card(props: Readonly<CardProps>) {
       <div className="flex gap-3 mt-2 md:mt-4">
         <a
           href={props.link}
+          target="_blank"
           className="text-[#BBBBBB] text-[8px] md:text-[15px] hover:text-blue-400"
         >
           go to link
