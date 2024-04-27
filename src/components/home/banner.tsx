@@ -58,10 +58,10 @@ function MainScreen() {
             className="w-[350px] h-[100px] md:w-[586px] md:h-[188px]"
           />
           <Card
-            title="Javascript"
-            name="Example"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur ultricies, nunc nisl ultricies nisl, eget nisl euismod nisl nisl."
-            link="#"
+            title="App"
+            name="Save Clips"
+            description="Tools I made for saving your notes."
+            link="https://save-clips.vercel.app/"
             className="w-[350px] h-[100px] md:w-[586px] md:h-[188px]"
           />
         </div>
