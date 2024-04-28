@@ -21,16 +21,16 @@ function MainScreen() {
               <span className="-mt-3 md:-mt-12">Diaz Nugraha</span>
             </h1>
             <TextGenerateEffect
-              words="Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-              nostrum iste quibusdam aliquam maxime reiciendis odio nihil totam
-              neque nesciunt quas, libero nulla voluptates velit excepturi quos
-              quam. Non minus odit ad atque doloribus. Porro laudantium culpa
-              excepturi eligendi nemo."
-              className="text-[#CCCCCC] text-[15px] md:text-[20px] w-[80%]"
+              words="I'm a a dynamic and results-driven Computer Science graduate from Politeknik Negeri Indramayu. With a deep passion for software engineering, I am constantly seeking new challenges and opportunities to grow in the field."
+              className="text-[#CCCCCC] text-[12px] md:text-[20px] w-[80%] text-justify mb-2"
+            />
+            <TextGenerateEffect
+              words="My mission is to collaborate with forward-thinking teams and organizations to tackle complex challenges and deliver solutions that make a difference. I am excited to explore opportunities where I can apply my skills and passion for software engineering to create meaningful impact."
+              className="text-[#CCCCCC] text-[12px] md:text-[20px] w-[80%] text-justify"
             />
           </div>
 
-          <div className="mt-3 md:mt-5 flex flex-col gap-2 md:gap-4 text-white text-[12px] md:text-[18px]">
+          {/* <div className="mt-3 md:mt-5 flex flex-col gap-2 md:gap-4 text-white text-[12px] md:text-[18px]">
             <a className="" href="#">
               #1 ----------- HOME
             </a>
@@ -40,27 +40,27 @@ function MainScreen() {
             <a className="" href="#">
               #3 ----------- SKILLS
             </a>
-          </div>
+          </div> */}
         </div>
         <div className="flex-1 h-full flex flex-col gap-y-8 items-center md:items-end justify-center md:mr-40 mt-4 md:mt-0">
           <Card
-            title="Github"
-            name="@DiazNugraha"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur ultricies, nunc nisl ultricies nisl, eget nisl euismod nisl nisl."
-            link="https://github.com/DiazNugraha"
+            title="LinkedIn"
+            name="Diaz Nugraha"
+            description="Connect with me on LinkedIn to stay updated on my professional journey, explore my skills and experiences, and discover opportunities for collaboration and networking."
+            link="https://www.linkedin.com/in/diaz-nugraha-820342246/"
             className="w-[350px] h-[100px] md:w-[586px] md:h-[188px]"
           />
           <Card
-            title="LinkedIn"
-            name="Diaz Nugraha"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur ultricies, nunc nisl ultricies nisl, eget nisl euismod nisl nisl."
-            link="https://www.linkedin.com/in/diaz-nugraha-820342246/"
+            title="Github"
+            name="@DiazNugraha"
+            description="Discover more about my projects and contributions by visiting my GitHub profile."
+            link="https://github.com/DiazNugraha"
             className="w-[350px] h-[100px] md:w-[586px] md:h-[188px]"
           />
           <Card
             title="App"
             name="Save Clips"
-            description="Tools I made for saving your notes."
+            description="App I've developed specifically for efficiently managing and organizing notes."
             link="https://save-clips.vercel.app/"
             className="w-[350px] h-[100px] md:w-[586px] md:h-[188px]"
           />
