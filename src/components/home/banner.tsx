@@ -29,18 +29,6 @@ function MainScreen() {
               className="text-[#CCCCCC] text-[12px] md:text-[20px] w-[80%] text-justify"
             />
           </div>
-
-          {/* <div className="mt-3 md:mt-5 flex flex-col gap-2 md:gap-4 text-white text-[12px] md:text-[18px]">
-            <a className="" href="#">
-              #1 ----------- HOME
-            </a>
-            <a className="" href="#">
-              #2 ----------- EXPERIENCES
-            </a>
-            <a className="" href="#">
-              #3 ----------- SKILLS
-            </a>
-          </div> */}
         </div>
         <div className="flex-1 h-full flex flex-col gap-y-8 items-center md:items-end justify-center md:mr-40 mt-4 md:mt-0">
           <Card
