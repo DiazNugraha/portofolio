@@ -11,7 +11,7 @@ export default function HomePage() {
         <Meteors number={11} className="" />
       </div>
       <Banner />
-      {/* <Profile /> */}
+      <Profile />
       <Experience />
       <Information />
     </div>

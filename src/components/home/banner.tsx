@@ -1,6 +1,10 @@
 import { Meteors } from "../ui/meteors";
 import Card from "../ui/card";
 import { TextGenerateEffect } from "../ui/text-generate-effect.";
+import CardShimmer from "../ui/card-shimmer";
+import GithubIcon from "../ui/icons/github-icon";
+import LinkedinIcon from "../ui/icons/linkedin-icon";
+import TwitterIcon from "../ui/icons/twitter-icon";
 
 export default function Banner() {
   return (
@@ -24,10 +28,32 @@ function MainScreen() {
               words="I'm a a dynamic and results-driven Computer Science graduate from Politeknik Negeri Indramayu. With a deep passion for software engineering, I am constantly seeking new challenges and opportunities to grow in the field."
               className="text-[#CCCCCC] text-[12px] md:text-[20px] w-[80%] text-justify mb-2"
             />
-            <TextGenerateEffect
-              words="My mission is to collaborate with forward-thinking teams and organizations to tackle complex challenges and deliver solutions that make a difference. I am excited to explore opportunities where I can apply my skills and passion for software engineering to create meaningful impact."
-              className="text-[#CCCCCC] text-[12px] md:text-[20px] w-[80%] text-justify"
-            />
+            <div className="flex gap-x-4">
+              <CardShimmer className="p-4 md:p-6">
+                <a
+                  href="https://github.com/DiazNugraha"
+                  className="rounded-full bg-slate-300 p-0"
+                >
+                  <GithubIcon className="" />
+                </a>
+              </CardShimmer>
+              <CardShimmer className="p-4 md:p-6">
+                <a
+                  href="https://www.linkedin.com/in/diaz-nugraha-820342246/"
+                  className="rounded-full bg-slate-300 p-0"
+                >
+                  <LinkedinIcon className="" />
+                </a>
+              </CardShimmer>
+              <CardShimmer className="p-4 md:p-6">
+                <a
+                  href="https://twitter.com/NugrahaDiaz_"
+                  className="rounded-full bg-slate-300 p-0"
+                >
+                  <TwitterIcon className="" />
+                </a>
+              </CardShimmer>
+            </div>
           </div>
         </div>
         <div className="flex-1 h-full flex flex-col gap-y-8 items-center md:items-end justify-center md:mr-40 mt-4 md:mt-0">
