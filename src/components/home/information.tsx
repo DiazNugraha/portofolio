@@ -11,22 +11,22 @@ export default function Information() {
     {
       title: "FRONTEND",
       description: "Next Js + React Js + Vue Js",
-      img: "test",
+      img: "",
     },
     {
       title: "BACKEND",
       description: "Nest Js + Django + Express Js + Gin",
-      img: "test",
+      img: "",
     },
     {
       title: "DATABASE",
       description: "MySQL + PostgreSQL + MongoDB",
-      img: "test",
+      img: "",
     },
     {
       title: "PLATFORM",
       description: "Web",
-      img: "test",
+      img: "",
     },
   ];
   return (
