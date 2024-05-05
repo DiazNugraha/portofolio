@@ -21,7 +21,7 @@ function MainScreen() {
         <div className="flex-1 h-full flex flex-col justify-around md:ml-40">
           <div className="">
             <h1 className="text-[50px] md:text-[100px] text-white font-bold flex flex-col">
-              <span>Hello, I'm</span>
+              <span>Hello, I&lsquo;m</span>
               <span className="-mt-3 md:-mt-12">Diaz Nugraha</span>
             </h1>
             <TextGenerateEffect
