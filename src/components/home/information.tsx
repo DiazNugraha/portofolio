@@ -15,7 +15,7 @@ export default function Information() {
     },
     {
       title: "BACKEND",
-      description: "Nest Js + Django + Express Js + Gin",
+      description: "Nest Js + Django + Express Js + Go Fiber",
       img: "",
     },
     {
