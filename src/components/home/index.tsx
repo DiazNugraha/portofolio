@@ -9,6 +9,7 @@ import { Meteors } from "../ui/meteors";
 import { useRouter } from "next/router";
 
 export default function HomePage() {
+  const route = useRouter();
   const items: {
     title: string;
     description: string;
@@ -18,43 +19,37 @@ export default function HomePage() {
     {
       title: "Apps",
       description: "A collection of service and apps I use for day to day",
-      link: "/apps",
-      img: "",
+      link: "/#",
+    },
+    {
+      title: "Technologies",
+      description: "List of technologies I use",
+      link: "/#",
     },
     {
       title: "Cheatsheets",
       description: "Note books and cheat sheets for different technologies",
-      link: "/apps",
-      img: "",
-    },
-    {
-      title: "Save clips",
-      description: "App I made for saving notes",
-      link: "/apps",
-      img: "",
-    },
-    {
-      title: "Projects",
-      description: "My projects and projects I am working on",
-      link: "/apps",
-      img: "",
+      link: "/#",
     },
     {
       title: "Algorithm",
       description: "My notes on algorithms and data structures",
-      link: "/apps",
-      img: "",
+      link: "/#",
     },
     {
-      title: "Wiki",
-      description: "A collection of online resources and notes",
-      link: "/apps",
-      img: "",
+      title: "Portfolio",
+      description: "My portfolio",
+      link: route.basePath + "/portfolio",
+    },
+    {
+      title: "Save clips",
+      description: "App I made for saving notes",
+      link: "https://save-clips.vercel.app/",
     },
   ];
 
   return (
-    <div className="w-full h-full flex justify-center relative">
+    <div className="w-full h-full flex justify-center">
       <div className="absolute w-full h-full overflow-hidden">
         <Meteors number={11} className="" />
       </div>
@@ -78,15 +73,17 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="bg-transparent border-[1px] w-full p-7 rounded-md text-justify">
-            Hi there 👋 thanks for visiting, I'm a Full Stack Software Developer
-            and I also share my knowledge about programming mostly about web
-            development and the programming language I use mostly Typescript,
-            Python and Golang.
+          <div className="bg-transparent border-[1px] w-full p-7 rounded-md">
+            <p className="text-justify">
+              Hi there 👋 thanks for visiting, I'm a Full Stack Software
+              Developer and I also share my knowledge about programming mostly
+              about web development and the programming language I use mostly
+              Typescript, Python and Golang.
+            </p>
           </div>
 
           <div className="flex gap-x-4 justify-start w-full">
-            <CardShimmer className="p-4 md:p-6">
+            <CardShimmer className="p-4 md:p-6 z-10">
               <a
                 href="https://github.com/DiazNugraha"
                 className="rounded-full bg-slate-300 p-0"
@@ -94,7 +91,7 @@ export default function HomePage() {
                 <GithubIcon className="" />
               </a>
             </CardShimmer>
-            <CardShimmer className="p-4 md:p-6">
+            <CardShimmer className="p-4 md:p-6 z-10">
               <a
                 href="https://www.linkedin.com/in/diaz-nugraha-820342246/"
                 className="rounded-full bg-slate-300 p-0"
@@ -102,7 +99,7 @@ export default function HomePage() {
                 <LinkedinIcon className="" />
               </a>
             </CardShimmer>
-            <CardShimmer className="p-4 md:p-6">
+            <CardShimmer className="p-4 md:p-6 z-10">
               <a
                 href="https://twitter.com/NugrahaDiaz_"
                 className="rounded-full bg-slate-300 p-0"
@@ -112,11 +109,7 @@ export default function HomePage() {
             </CardShimmer>
           </div>
 
-          <HoverEffect
-            className="lg:grid-cols-2"
-            items={items}
-            isContentCentered={true}
-          />
+          <HoverEffect className="lg:grid-cols-2" items={items} />
 
           <Footer />
         </div>
