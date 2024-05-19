@@ -5,6 +5,8 @@ import { HoverEffect } from "../ui/card-hover-effect";
 import GithubIcon from "../ui/icons/github-icon";
 import LinkedinIcon from "../ui/icons/linkedin-icon";
 import TwitterIcon from "../ui/icons/twitter-icon";
+import { Meteors } from "../ui/meteors";
+import { useRouter } from "next/router";
 
 export default function HomePage() {
   const items: {
@@ -52,7 +54,10 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="w-full h-full flex justify-center">
+    <div className="w-full h-full flex justify-center relative">
+      <div className="absolute w-full h-full overflow-hidden">
+        <Meteors number={11} className="" />
+      </div>
       <div className="w-[45%] h-[100vh]">
         <div className="flex p-10 text-white flex-col items-center gap-y-9">
           <div className="flex flex-col gap-6 w-full justify-start">
@@ -73,10 +78,11 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="bg-transparent border-[1px] w-full p-7 rounded-md">
-            Hi there 👋 thanks for coming, I write both short and long tutorials
-            about web development mostly about Laravel, JavaScript, Rust and
-            Golang.
+          <div className="bg-transparent border-[1px] w-full p-7 rounded-md text-justify">
+            Hi there 👋 thanks for visiting, I'm a Full Stack Software Developer
+            and I also share my knowledge about programming mostly about web
+            development and the programming language I use mostly Typescript,
+            Python and Golang.
           </div>
 
           <div className="flex gap-x-4 justify-start w-full">
@@ -120,17 +126,29 @@ export default function HomePage() {
 }
 
 function Footer() {
+  const route = useRouter();
   return (
-    <div className="w-full border-t-[0.5px] border-t-[#6f6f6f] flex flex-col text-[#CCCCCC] gap-3 pt-3">
+    <div className="w-full border-t-[0.5px] border-t-[#6f6f6f] flex flex-col text-[#CCCCCC] gap-6 pt-3">
       <div className="flex gap-2">
-        <a href="#">Github</a>
-        <a href="#">Linkedin</a>
-        <a href="#">Twitter</a>
-        <a href="#">Portfolio</a>
+        <a href="https://github.com/DiazNugraha" target="_blank">
+          Github
+        </a>
+        <a
+          href="https://www.linkedin.com/in/diaz-nugraha-820342246/"
+          target="_blank"
+        >
+          Linkedin
+        </a>
+        <a href="https://twitter.com/NugrahaDiaz_" target="_blank">
+          Twitter
+        </a>
+        <a href={`${route.basePath}/portfolio`} target="_blank">
+          Portfolio
+        </a>
       </div>
       <div className="w-full flex justify-between">
         <span>Built with Next.Js, Tailwind and Vercel</span>
-        <span>&copy;All rights reserved.</span>
+        <span>&copy;2024 All rights reserved.</span>
       </div>
     </div>
   );

@@ -1,6 +1,5 @@
 import { cn } from "@/utils/cn";
 import { AnimatePresence, motion } from "framer-motion";
-import Link from "next/link";
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
 
@@ -51,7 +50,7 @@ export const HoverEffect = ({
               />
             )}
           </AnimatePresence>
-          <Card isContentCentered={isContentCentered}>
+          <Card isContentCentered={isContentCentered} link={item.link}>
             {item.img && (
               <div className="w-[50px] h-[50px] border-[1px] border-white bg-transparent rounded-full"></div>
             )}
@@ -68,11 +67,23 @@ export const Card = ({
   className,
   children,
   isContentCentered,
+  link,
 }: {
   className?: string;
   children: React.ReactNode;
   isContentCentered: boolean;
+  link?: string;
 }) => {
+  const content: JSX.Element = (
+    <div
+      className={twMerge(
+        "p-4",
+        isContentCentered && "flex flex-col justify-center items-center"
+      )}
+    >
+      {children}
+    </div>
+  );
   return (
     <div
       className={cn(
@@ -80,16 +91,13 @@ export const Card = ({
         className
       )}
     >
-      <div className="relative z-50">
-        <div
-          className={twMerge(
-            "p-4",
-            isContentCentered && "flex flex-col justify-center items-center"
-          )}
-        >
-          {children}
-        </div>
-      </div>
+      {link ? (
+        <a href={link} target="_blank" className="relative z-50">
+          {content}
+        </a>
+      ) : (
+        <div className="relative z-50">{content}</div>
+      )}
     </div>
   );
 };
