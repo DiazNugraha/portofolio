@@ -1,3 +1,4 @@
+import { CommonItem } from "@/types/common";
 import { cn } from "@/utils/cn";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
@@ -7,15 +8,12 @@ export const HoverEffect = ({
   items,
   className,
   isContentCentered = false,
+  showLink = false,
 }: {
-  items: {
-    title: string;
-    description: string;
-    link?: string;
-    img?: string;
-  }[];
+  items: CommonItem[];
   className?: string;
   isContentCentered?: boolean;
+  showLink?: boolean;
 }) => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
@@ -55,6 +53,7 @@ export const HoverEffect = ({
               <div className="w-[50px] h-[50px] border-[1px] border-white bg-transparent rounded-full"></div>
             )}
             <CardTitle>{item.title}</CardTitle>
+            {showLink && item.link && <CardLink link={item.link} />}
             <CardDescription>{item.description}</CardDescription>
           </Card>
         </div>
@@ -101,6 +100,7 @@ export const Card = ({
     </div>
   );
 };
+
 export const CardTitle = ({
   className,
   children,
@@ -114,6 +114,24 @@ export const CardTitle = ({
     </h4>
   );
 };
+
+export const CardLink = ({
+  className,
+  link,
+}: {
+  className?: string;
+  link: string;
+}) => {
+  return (
+    <a
+      className={cn("text-zinc-600 font-bold tracking-wide text-sm", className)}
+      href={link}
+    >
+      {link}
+    </a>
+  );
+};
+
 export const CardDescription = ({
   className,
   children,
@@ -124,7 +142,7 @@ export const CardDescription = ({
   return (
     <p
       className={cn(
-        "mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm",
+        "mt-5 text-zinc-400 tracking-wide leading-relaxed text-sm",
         className
       )}
     >

@@ -7,19 +7,15 @@ import LinkedinIcon from "../ui/icons/linkedin-icon";
 import TwitterIcon from "../ui/icons/twitter-icon";
 import { Meteors } from "../ui/meteors";
 import { useRouter } from "next/router";
+import { CommonItem } from "@/types/common";
 
 export default function HomePage() {
   const route = useRouter();
-  const items: {
-    title: string;
-    description: string;
-    link?: string;
-    img?: string;
-  }[] = [
+  const items: CommonItem[] = [
     {
       title: "Apps",
       description: "A collection of service and apps I use for day to day",
-      link: "/#",
+      link: route.basePath + "/apps",
     },
     {
       title: "Technologies",
@@ -118,7 +114,7 @@ export default function HomePage() {
   );
 }
 
-function Footer() {
+export function Footer() {
   const route = useRouter();
   return (
     <div className="w-full border-t-[0.5px] border-t-[#6f6f6f] flex flex-col text-[#CCCCCC] gap-6 pt-3">
