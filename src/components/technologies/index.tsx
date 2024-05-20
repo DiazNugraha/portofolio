@@ -35,7 +35,7 @@ const itemCollections: CommonItem[] = [
   {
     title: "Flask",
     description: "lightweight and flexible Python web framework",
-    link: "https://www.djangoproject.com/",
+    link: "https://flask.palletsprojects.com/en/3.0.x/",
   },
   {
     title: "Fiber",
@@ -81,6 +81,11 @@ const itemCollections: CommonItem[] = [
     title: "Git",
     description: "Version control system",
     link: "https://git-scm.com/",
+  },
+  {
+    title: "Rasa AI",
+    description: "Conversational Chatbot Framework based on NLP",
+    link: "https://rasa.com/",
   },
 ];
 
