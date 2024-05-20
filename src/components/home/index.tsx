@@ -20,7 +20,7 @@ export default function HomePage() {
     {
       title: "Technologies",
       description: "List of technologies I use",
-      link: "/#",
+      link: route.basePath + "/technologies",
     },
     {
       title: "Cheatsheets",
