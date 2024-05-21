@@ -71,7 +71,7 @@ export default function HomePage() {
 
           <div className="bg-transparent border-[1px] w-full p-7 rounded-md">
             <p className="text-justify">
-              Hi there 👋 thanks for visiting, I'm a Full Stack Software
+              Hi there 👋 thanks for visiting, I&lsquo;m a Full Stack Software
               Developer and I also share my knowledge about programming mostly
               about web development and the programming language I use mostly
               Typescript, Python and Golang.
