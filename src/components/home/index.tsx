@@ -69,7 +69,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="bg-transparent border-[1px] w-full p-7 rounded-md">
+          <div className="bg-transparent border-[1px] border-slate-800 w-full p-7 rounded-md">
             <p className="text-justify">
               Hi there 👋 thanks for visiting, I&lsquo;m a Full Stack Software
               Developer and I also share my knowledge about programming mostly
