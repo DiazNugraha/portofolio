@@ -8,6 +8,7 @@ import TwitterIcon from "../ui/icons/twitter-icon";
 import { Meteors } from "../ui/meteors";
 import { useRouter } from "next/router";
 import { CommonItem } from "@/types/common";
+import GmailIcon from "../ui/icons/gmail-icons";
 
 export default function HomePage() {
   const route = useRouter();
@@ -101,6 +102,14 @@ export default function HomePage() {
                 className="rounded-full bg-slate-300 p-0"
               >
                 <TwitterIcon className="" />
+              </a>
+            </CardShimmer>
+            <CardShimmer className="p-4 md:p-6 z-10">
+              <a
+                href="mailto:diaznugraha00@gmail.com"
+                className="rounded-full bg-slate-300 p-1"
+              >
+                <GmailIcon className="" />
               </a>
             </CardShimmer>
           </div>
