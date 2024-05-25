@@ -1,10 +1,10 @@
-import { Meteors } from "../ui/meteors";
 import Card from "../ui/card";
 import { TextGenerateEffect } from "../ui/text-generate-effect.";
 import CardShimmer from "../ui/card-shimmer";
 import GithubIcon from "../ui/icons/github-icon";
 import LinkedinIcon from "../ui/icons/linkedin-icon";
 import TwitterIcon from "../ui/icons/twitter-icon";
+import GmailIcon from "../ui/icons/gmail-icons";
 
 export default function Banner() {
   return (
@@ -51,6 +51,14 @@ function MainScreen() {
                   className="rounded-full bg-slate-300 p-0"
                 >
                   <TwitterIcon className="" />
+                </a>
+              </CardShimmer>
+              <CardShimmer className="p-4 md:p-6 z-10">
+                <a
+                  href="mailto:diaznugraha00@gmail.com"
+                  className="rounded-full bg-slate-300 p-1"
+                >
+                  <GmailIcon className="" />
                 </a>
               </CardShimmer>
             </div>
