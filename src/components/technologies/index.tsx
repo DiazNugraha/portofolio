@@ -1,7 +1,7 @@
 import { CommonItem } from "@/types/common";
 import { useEffect, useState } from "react";
 import { HoverEffect } from "../ui/card-hover-effect";
-import { Footer } from "../home";
+import { FooterLayout } from "../layout";
 
 const itemCollections: CommonItem[] = [
   {
@@ -103,7 +103,7 @@ export default function TechnologiesPage() {
         </h1>
         <HoverEffect className="lg:grid-cols-2" showLink items={items} />
 
-        <Footer />
+        <FooterLayout />
       </div>
     </div>
   );
