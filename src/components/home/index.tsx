@@ -7,49 +7,10 @@ import LinkedinIcon from "../ui/icons/linkedin-icon";
 import TwitterIcon from "../ui/icons/twitter-icon";
 import { Meteors } from "../ui/meteors";
 import { useRouter } from "next/router";
-import { CommonItem } from "@/types/common";
 import GmailIcon from "../ui/icons/gmail-icons";
+import { MenuNavigations } from "@/constants";
 
 export default function HomePage() {
-  const route = useRouter();
-  const items: CommonItem[] = [
-    {
-      title: "Apps",
-      description: "A collection of service and apps I use for day to day",
-      link: route.basePath + "/apps",
-    },
-    {
-      title: "Technologies",
-      description: "List of technologies I use",
-      link: route.basePath + "/technologies",
-    },
-    {
-      title: "Cheatsheets",
-      description: "Note books and cheat sheets for different technologies",
-      link: "/#",
-    },
-    {
-      title: "Algorithm",
-      description: "My notes on algorithms and data structures",
-      link: "/#",
-    },
-    {
-      title: "Portfolio",
-      description: "My portfolio",
-      link: route.basePath + "/portfolio",
-    },
-    {
-      title: "Save clips",
-      description: "App I made for saving notes",
-      link: "https://save-clips.vercel.app/",
-    },
-    {
-      title: "Markdown to pages Converter",
-      description: "App I made for converting markdown to svelte pages",
-      link: "https://github.com/DiazNugraha/markdown-to-pages-converter-fe",
-    },
-  ];
-
   return (
     <div className="w-full h-full flex justify-center">
       <div className="absolute w-full h-full overflow-hidden">
@@ -119,7 +80,7 @@ export default function HomePage() {
             </CardShimmer>
           </div>
 
-          <HoverEffect className="lg:grid-cols-2" items={items} />
+          <HoverEffect className="lg:grid-cols-2" items={MenuNavigations} />
 
           <Footer />
         </div>
