@@ -2,11 +2,16 @@ import Image from "next/image";
 import { Globe } from "lucide-react";
 import { BackgroundGradient } from "@/components/ui/background-gradient";
 import Link from "next/link";
+import GithubIcon from "@/components/ui/icons/github-icon";
+import GmailIcon from "@/components/ui/icons/gmail-icons";
+import LinkedinIcon from "@/components/ui/icons/linkedin-icon";
+import TwitterIcon from "@/components/ui/icons/twitter-icon";
+import { PropsWithChildren } from "react";
 
 export default function HeaderSection() {
   return (
     <div className="flex flex-col gap-3 w-full">
-      <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center">
+      <div className="flex flex-col gap-3 lg:gap-0 lg:flex-row lg:justify-between lg:items-center">
         <div className="flex flex-col gap-1 text-white ">
           <span className="text-xl font-bold">Diaz Nugraha</span>
           <span className="text-xs">
@@ -14,7 +19,7 @@ export default function HeaderSection() {
             App.
           </span>
           <div className="flex text-xs items-center gap-2">
-            <Globe />
+            <Globe width={20} />
             <Link
               href={"https://maps.app.goo.gl/vANraJaTNSCMxQ376"}
               className="hover:underline"
@@ -22,6 +27,7 @@ export default function HeaderSection() {
               Indramayu, West Java, Indonesia
             </Link>
           </div>
+          <ContactButtons />
         </div>
         <div className="flex">
           <BackgroundGradient roundedFull>
@@ -35,53 +41,39 @@ export default function HeaderSection() {
           </BackgroundGradient>
         </div>
       </div>
-      {/* <div className="w-full flex flex-col gap-1"> */}
-      {/* <TextGenerateEffect */}
-      {/*   className="text-white text-[10px] md:text-sm text-justify font-light" */}
-      {/*   words="As a front-end developer with over 3-years experience working in ReactJs and 1-year in ReactNative, I always improve my knowledge, develop professional skills, have the spirit of the market, learn from the experience and from colleagues to be an IT professional, ethical, good qualities. I intend to become a full-stack developer in the future. Applying experience in programming skills and understanding of the technologies learned to be an employee contributes and brings a lot of value to the Company." */}
-      {/* /> */}
-
-      {/* <TextGenerateEffect */}
-      {/*   className="text-white text-[10px] md:text-sm text-justify font-light" */}
-      {/*   words=" My journey in software engineering has been fueled by a relentless */}
-      {/*   pursuit of innovation and excellence. I am driven by the desire to */}
-      {/*   create impactful solutions that address real-world problems and */}
-      {/*   enhance user experiences." */}
-      {/* /> */}
-      {/* <TextGenerateEffect */}
-      {/*   className="text-white text-[10px] md:text-sm text-justify font-light" */}
-      {/*   words=" As a Software Engineer, I bring a diverse skill set encompassing */}
-      {/*   frontend, backend, and full-stack development. I thrive in fast-paced */}
-      {/*   environments where I can leverage my expertise to contribute to */}
-      {/*   cutting-edge projects and drive organizational success." */}
-      {/* /> */}
-      {/* <TextGenerateEffect */}
-      {/*   className="text-white text-[10px] md:text-sm text-justify font-light" */}
-      {/*   words="My mission is to collaborate with forward-thinking teams and */}
-      {/*   organizations to tackle complex challenges and deliver solutions that */}
-      {/*   make a difference. I am excited to explore opportunities where I can */}
-      {/*   apply my skills and passion for software engineering to create */}
-      {/*   meaningful impact." */}
-      {/* /> */}
-
-      {/* <p className="text-white text-[10px] md:text-sm text-justify font-light"> */}
-      {/*   My journey in software engineering has been fueled by a relentless */}
-      {/*   pursuit of innovation and excellence. I am driven by the desire to */}
-      {/*   create impactful solutions that address real-world problems and */}
-      {/*   enhance user experiences. */}
-      {/*   <br /> */}
-      {/*   As a Software Engineer, I bring a diverse skill set encompassing */}
-      {/*   frontend, backend, and full-stack development. I thrive in fast-paced */}
-      {/*   environments where I can leverage my expertise to contribute to */}
-      {/*   cutting-edge projects and drive organizational success. */}
-      {/*   <br /> */}
-      {/*   My mission is to collaborate with forward-thinking teams and */}
-      {/*   organizations to tackle complex challenges and deliver solutions that */}
-      {/*   make a difference. I am excited to explore opportunities where I can */}
-      {/*   apply my skills and passion for software engineering to create */}
-      {/*   meaningful impact. */}
-      {/* </p> */}
-      {/* </div> */}
     </div>
+  );
+}
+
+function ContactButtons() {
+  return (
+    <div className="flex gap-x-4 justify-start w-full">
+      <ButtonWrapper link="https://github.com/DiazNugraha">
+        <GithubIcon width={12} />
+      </ButtonWrapper>
+      <ButtonWrapper link="https://www.linkedin.com/in/diaz-nugraha-820342246/">
+        <LinkedinIcon width={12} />
+      </ButtonWrapper>
+      <ButtonWrapper link="https://twitter.com/NugrahaDiaz_">
+        <TwitterIcon width={12} />
+      </ButtonWrapper>
+      <ButtonWrapper link="mailto:diaznugraha00@gmail.com">
+        <GmailIcon width={12} />
+      </ButtonWrapper>
+    </div>
+  );
+}
+
+function ButtonWrapper({
+  children,
+  link,
+}: PropsWithChildren & { link: string }) {
+  return (
+    <a
+      href={link}
+      className="rounded-full bg-slate-300  h-5 w-5 flex items-center justify-center"
+    >
+      {children}
+    </a>
   );
 }
