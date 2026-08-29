@@ -7,6 +7,7 @@ import GmailIcon from "@/components/ui/icons/gmail-icons";
 import LinkedinIcon from "@/components/ui/icons/linkedin-icon";
 import TwitterIcon from "@/components/ui/icons/twitter-icon";
 import { PropsWithChildren } from "react";
+import { motion } from "framer-motion";
 
 export default function HeaderSection() {
   return (
@@ -69,11 +70,22 @@ function ButtonWrapper({
   link,
 }: PropsWithChildren & { link: string }) {
   return (
-    <a
+    <motion.a
+      whileHover={{
+        scale: 1.5,
+      }}
+      whileTap={{
+        scale: 0.98,
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 300,
+        damping: 20,
+      }}
       href={link}
       className="rounded-full bg-slate-300  h-5 w-5 flex items-center justify-center"
     >
       {children}
-    </a>
+    </motion.a>
   );
 }
