@@ -14,8 +14,8 @@ export default function HomePage() {
       {/* <div className="absolute w-full h-full overflow-hidden"> */}
       {/*   <Meteors number={11} className="" /> */}
       {/* </div> */}
-      <div className="lg:w-[40%] h-[100vh]">
-        <div className="flex py-36 text-white flex-col items-center gap-y-11">
+      <div className="lg:w-[30%] h-full">
+        <div className="flex py-36 text-white flex-col items-center gap-y-16">
           <HeaderSection />
           <AboutSection />
           <ExperienceSection />

@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 
 export default function HeaderSection() {
   return (
-    <div className="flex flex-col gap-3 w-full">
+    <section className="flex flex-col gap-3 w-full">
       <div className="flex flex-col gap-3 lg:gap-0 lg:flex-row lg:justify-between lg:items-center">
         <div className="flex flex-col gap-1 text-white ">
           <span className="text-xl font-bold">Diaz Nugraha</span>
@@ -42,7 +42,7 @@ export default function HeaderSection() {
           </BackgroundGradient>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
