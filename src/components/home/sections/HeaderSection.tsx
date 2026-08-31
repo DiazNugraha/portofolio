@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Globe } from "lucide-react";
-import { BackgroundGradient } from "@/components/ui/background-gradient";
 import Link from "next/link";
 import GithubIcon from "@/components/ui/icons/github-icon";
 import GmailIcon from "@/components/ui/icons/gmail-icons";
@@ -31,15 +30,13 @@ export default function HeaderSection() {
           <ContactButtons />
         </div>
         <div className="flex">
-          <BackgroundGradient roundedFull>
-            <Image
-              src={"/assets/profile.png"}
-              className="rounded-full"
-              width={100}
-              height={200}
-              alt={"profile"}
-            />
-          </BackgroundGradient>
+          <Image
+            src={"/assets/profile.png"}
+            className="rounded-full"
+            width={100}
+            height={200}
+            alt={"profile"}
+          />
         </div>
       </div>
     </section>
