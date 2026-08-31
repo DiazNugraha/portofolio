@@ -5,6 +5,7 @@ import {
   ExperienceSection,
   HeaderSection,
   NavigationSection,
+  ProjectSection,
   SkillSection,
 } from "./sections";
 
@@ -19,8 +20,9 @@ export default function HomePage() {
           <HeaderSection />
           <AboutSection />
           <ExperienceSection />
+          <ProjectSection />
           <SkillSection />
-          <NavigationSection />
+          {/* <NavigationSection /> */}
           <FooterLayout />
         </div>
       </div>

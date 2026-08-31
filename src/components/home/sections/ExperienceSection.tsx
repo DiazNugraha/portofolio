@@ -5,21 +5,21 @@ const experiences: {
   imageUrl?: string;
   subtitle?: string;
   description?: string;
-  badges?: string[];
+  industryDomain?: string;
 }[] = [
   {
-    title: "PT APPLIMETIS PARAMA SOLUTION",
+    title: "International Centre for Industrial Transformation (INCIT)",
     subtitle: "Full Stack Developer · Aug 2024 — Jun 2026",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
-    badges: ["Next.js", "Nest.js", "PostgreSQL"],
+    industryDomain: "Enterprise Software · Full-time",
   },
   {
     title: "PT APPLIMETIS PARAMA SOLUTION",
-    subtitle: "Full Stack Developer · Aug 2024 — Jun 2026",
+    subtitle: "Full Stack Developer · Nov 2022 — Mar 2024",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
-    badges: ["Next.js", "Nest.js", "PostgreSQL"],
+    industryDomain: "Healthcare Information Technology · Full-time",
   },
 ];
 

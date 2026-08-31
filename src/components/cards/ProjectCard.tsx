@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 
-interface ExperienceCardProps {
+interface ProjectCardProps {
   title: string;
   imageUrl?: string;
   subtitle?: string;
   description?: string;
+  badges?: string[];
   link?: string;
-  industryDomain?: string;
 }
 
 const cardVariants = {
@@ -39,14 +39,14 @@ const buttonVariants = {
   },
 };
 
-export default function ExperienceCard({
+export default function ProjectCard({
   title,
   imageUrl,
   subtitle,
   description,
+  badges,
   link,
-  industryDomain,
-}: ExperienceCardProps) {
+}: ProjectCardProps) {
   return (
     <motion.a
       href={link ?? "#"}
@@ -81,7 +81,19 @@ export default function ExperienceCard({
 
       <p className="text-xs text-justify text-slate-500">{description}</p>
 
-      <h3 className="text-sm text-slate-500">{industryDomain}</h3>
+      <div className="flex gap-2 border-t-[1px] border-t-slate-800 pt-2">
+        {badges?.map((badge) => (
+          <Badge name={badge} key={badge} />
+        ))}
+      </div>
     </motion.a>
+  );
+}
+
+function Badge({ name }: { name: string }) {
+  return (
+    <div className="flex items-center justify-center p-1 bg-slate-500 text-white w-fit text-[10px] lg:text-xs rounded-lg">
+      {name}
+    </div>
   );
 }
