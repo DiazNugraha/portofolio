@@ -33,7 +33,7 @@ const selectedProjects: {
 export default function ProjectSection() {
   return (
     <section className="flex flex-col gap-2">
-      <h1 className="text-lg lg:text-2xl">Selected Projects</h1>
+      <h1 className="text-lg lg:text-xl font-semibold">Selected Projects</h1>
       <div className="flex flex-col gap-3">
         {selectedProjects.map((project, index) => (
           <ProjectCard {...project} key={index} />
