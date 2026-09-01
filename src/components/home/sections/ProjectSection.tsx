@@ -1,4 +1,5 @@
 import { ProjectCard } from "@/components/cards";
+import { motion } from "framer-motion";
 
 const selectedProjects: {
   title: string;
@@ -32,13 +33,22 @@ const selectedProjects: {
 
 export default function ProjectSection() {
   return (
-    <section className="flex flex-col gap-2">
+    <motion.section
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{
+        duration: 0.7,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      className="flex flex-col gap-2"
+    >
       <h1 className="text-lg lg:text-xl font-semibold">Selected Projects</h1>
       <div className="flex flex-col gap-3">
         {selectedProjects.map((project, index) => (
           <ProjectCard {...project} key={index} />
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }

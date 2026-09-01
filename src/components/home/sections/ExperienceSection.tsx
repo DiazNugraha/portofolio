@@ -1,4 +1,5 @@
 import { ExperienceCard } from "@/components/cards";
+import { motion } from "framer-motion";
 
 const experiences: {
   title: string;
@@ -25,13 +26,22 @@ const experiences: {
 
 export default function ExperienceSection() {
   return (
-    <section className="flex flex-col gap-2">
+    <motion.section
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{
+        duration: 0.7,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      className="flex flex-col gap-2"
+    >
       <h1 className="text-lg lg:text-xl font-semibold">Work Experience</h1>
       <div className="flex flex-col gap-3">
         {experiences.map((experience, index) => (
           <ExperienceCard {...experience} key={index} />
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }

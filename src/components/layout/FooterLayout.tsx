@@ -1,9 +1,19 @@
 import { useRouter } from "next/router";
+import { motion } from "framer-motion";
 
 export default function FooterLayout() {
   const route = useRouter();
   return (
-    <div className="w-full border-t-[0.5px] border-t-[#6f6f6f] flex flex-col text-[#CCCCCC] gap-6 pt-3">
+    <motion.section
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{
+        duration: 0.7,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      className="w-full border-t-[0.5px] border-t-[#6f6f6f] flex flex-col text-[#CCCCCC] gap-6 pt-3"
+    >
       <div className="flex justify-center lg:justify-start gap-2">
         <a href="https://github.com/DiazNugraha" target="_blank">
           Github
@@ -25,6 +35,6 @@ export default function FooterLayout() {
         <span>Built with Next.Js, Tailwind and Vercel</span>
         <span>&copy;2024 All rights reserved.</span>
       </div>
-    </div>
+    </motion.section>
   );
 }

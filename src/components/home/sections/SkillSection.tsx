@@ -4,7 +4,16 @@ import { ChevronRight } from "lucide-react";
 
 export default function SkillSection() {
   return (
-    <section className="flex flex-col gap-3 w-full">
+    <motion.section
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{
+        duration: 0.7,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      className="flex flex-col gap-3 w-full"
+    >
       <h1 className="text-lg lg:text-xl font-semibold">Skills</h1>
       <Wrapper title="Frontend">
         <SkillItem name="React" />
@@ -30,7 +39,7 @@ export default function SkillSection() {
         <SkillItem name="AWS S3" />
         <SkillItem name="Vite Plugin Federation" />
       </Wrapper>
-    </section>
+    </motion.section>
   );
 }
 
