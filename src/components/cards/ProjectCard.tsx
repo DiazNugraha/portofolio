@@ -18,28 +18,24 @@ const cardVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
+  },
+};
+
+const hoverVariants = {
+  rest: {
+    y: 0,
+    scale: 1,
   },
   hover: {
     y: -6,
     scale: 1.01,
-    transition: {
-      type: "spring",
-      stiffness: 300,
-      damping: 20,
-    },
   },
 };
 
 const buttonVariants = {
-  initial: {
+  rest: {
     opacity: 0,
     x: -20,
-    width: "24px",
-    height: "24px",
   },
   hover: {
     opacity: 1,
@@ -47,8 +43,6 @@ const buttonVariants = {
     backgroundColor: "#1E293B",
     color: "white",
     borderRadius: "50%",
-    width: "24px",
-    height: "24px",
   },
 };
 
@@ -63,42 +57,53 @@ export default function ProjectCard({
   return (
     <motion.a
       href={link ?? "#"}
-      variants={cardVariants}
       initial="hidden"
       whileInView="visible"
-      whileHover="hover"
-      whileTap={{ scale: 0.98 }}
-      viewport={{
-        once: true,
-        amount: 0.2,
+      variants={cardVariants}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{
+        duration: 0.6,
+        ease: "easeOut",
       }}
-      className="w-full border border-slate-800 hover:border-slate-600 hover:cursor-pointer rounded-3xl p-5 text-white flex flex-col gap-5"
     >
-      <div className="flex flex-col lg:flex-row lg:justify-between">
-        <div className="flex flex-col gap-1">
-          <span className="font-semibold text-sm lg:text-base">{title}</span>
-          <span className="font-medium text-xs lg:text-sm">{subtitle}</span>
+      <motion.div
+        variants={hoverVariants}
+        initial="rest"
+        whileHover="hover"
+        whileTap={{ scale: 0.98 }}
+        transition={{
+          type: "spring",
+          stiffness: 300,
+          damping: 20,
+        }}
+        className="w-full border border-slate-800 hover:border-slate-600 rounded-3xl p-5 text-white flex flex-col gap-5"
+      >
+        <div className="flex flex-col lg:flex-row lg:justify-between">
+          <div className="flex flex-col gap-1">
+            <span className="font-semibold text-sm lg:text-base">{title}</span>
+            <span className="font-medium text-xs lg:text-sm">{subtitle}</span>
+          </div>
+
+          <motion.button
+            variants={buttonVariants}
+            transition={{
+              duration: 0.25,
+              ease: "easeOut",
+            }}
+            className="flex items-center justify-center rounded-full p-2 h-7 w-7"
+          >
+            <ChevronRight width={16} />
+          </motion.button>
         </div>
 
-        <motion.button
-          variants={buttonVariants}
-          transition={{
-            duration: 0.25,
-            ease: "easeOut",
-          }}
-          className="w-fit flex items-center justify-center rounded-full p-2"
-        >
-          <ChevronRight width={16} />
-        </motion.button>
-      </div>
+        <p className="text-xs text-justify text-slate-500">{description}</p>
 
-      <p className="text-xs text-justify text-slate-500">{description}</p>
-
-      <div className="flex gap-2 border-t-[1px] border-t-slate-800 pt-2">
-        {badges?.map((badge) => (
-          <Badge name={badge} key={badge} />
-        ))}
-      </div>
+        <div className="flex gap-2 border-t-[1px] border-t-slate-800 pt-2">
+          {badges?.map((badge) => (
+            <Badge name={badge} key={badge} />
+          ))}
+        </div>
+      </motion.div>
     </motion.a>
   );
 }

@@ -55,6 +55,7 @@ function Wrapper({ title, children }: IWrapperProps & PropsWithChildren) {
     </div>
   );
 }
+
 const cardVariants = {
   hidden: {
     opacity: 0,
@@ -63,27 +64,24 @@ const cardVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
+  },
+};
+
+const hoverVariants = {
+  rest: {
+    y: 0,
+    scale: 1,
   },
   hover: {
-    scale: 1.05,
-    transition: {
-      type: "spring",
-      stiffness: 300,
-      damping: 20,
-    },
+    y: -6,
+    scale: 1.01,
   },
 };
 
 const buttonVariants = {
-  initial: {
+  rest: {
     opacity: 0,
     x: -20,
-    width: "24px",
-    height: "24px",
   },
   hover: {
     opacity: 1,
@@ -91,8 +89,6 @@ const buttonVariants = {
     backgroundColor: "#1E293B",
     color: "white",
     borderRadius: "50%",
-    width: "24px",
-    height: "24px",
   },
 };
 
@@ -106,31 +102,42 @@ function SkillItem({ name, imageUrl, url }: ISkillItemProps) {
   return (
     <motion.a
       href={url ?? "#"}
-      variants={cardVariants}
       initial="hidden"
       whileInView="visible"
-      whileHover="hover"
-      whileTap={{ scale: 0.98 }}
-      viewport={{
-        once: true,
-        amount: 0.2,
+      variants={cardVariants}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{
+        duration: 0.6,
+        ease: "easeOut",
       }}
-      className="flex-1 cursor-pointer border-[1px] border-slate-800 hover:boder-slate-600 flex py-2 px-3 justify-between items-center rounded-xl"
     >
-      <div className="flex gap-2">
-        <h3 className="text-xs lg:text-sm">{name}</h3>
-      </div>
-
-      <motion.button
-        variants={buttonVariants}
+      <motion.div
+        variants={hoverVariants}
+        initial="rest"
+        whileHover="hover"
+        whileTap={{ scale: 0.98 }}
         transition={{
-          duration: 0.25,
-          ease: "easeOut",
+          type: "spring",
+          stiffness: 300,
+          damping: 20,
         }}
-        className="w-fit flex items-center justify-center rounded-full p-2"
+        className="flex-1 cursor-pointer border-[1px] border-slate-800 hover:boder-slate-600 flex py-2 px-3 justify-between items-center rounded-xl"
       >
-        <ChevronRight width={16} />
-      </motion.button>
+        <div className="flex gap-2">
+          <h3 className="text-[10px] lg:text-xs">{name}</h3>
+        </div>
+
+        <motion.button
+          variants={buttonVariants}
+          transition={{
+            duration: 0.25,
+            ease: "easeOut",
+          }}
+          className="flex items-center justify-center rounded-full p-2 h-7 w-7"
+        >
+          <ChevronRight width={16} />
+        </motion.button>
+      </motion.div>
     </motion.a>
   );
 }
