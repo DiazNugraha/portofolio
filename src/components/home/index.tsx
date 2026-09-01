@@ -16,7 +16,7 @@ export default function HomePage() {
       {/*   <Meteors number={11} className="" /> */}
       {/* </div> */}
       <div className="lg:w-[30%] h-full">
-        <div className="flex py-36 text-white flex-col items-center gap-y-16">
+        <div className="flex px-5 py-36 text-white flex-col items-center gap-y-16">
           <HeaderSection />
           <AboutSection />
           <ExperienceSection />
