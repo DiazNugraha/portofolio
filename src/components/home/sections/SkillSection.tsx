@@ -56,11 +56,25 @@ function Wrapper({ title, children }: IWrapperProps & PropsWithChildren) {
   );
 }
 const cardVariants = {
-  initial: {
-    scale: 1,
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
   },
   hover: {
     scale: 1.05,
+    transition: {
+      type: "spring",
+      stiffness: 300,
+      damping: 20,
+    },
   },
 };
 
@@ -93,13 +107,13 @@ function SkillItem({ name, imageUrl, url }: ISkillItemProps) {
     <motion.a
       href={url ?? "#"}
       variants={cardVariants}
-      initial="initial"
+      initial="hidden"
+      whileInView="visible"
       whileHover="hover"
       whileTap={{ scale: 0.98 }}
-      transition={{
-        type: "spring",
-        stiffness: 300,
-        damping: 20,
+      viewport={{
+        once: true,
+        amount: 0.2,
       }}
       className="flex-1 cursor-pointer border-[1px] border-slate-800 hover:boder-slate-600 flex py-2 px-3 justify-between items-center rounded-xl"
     >

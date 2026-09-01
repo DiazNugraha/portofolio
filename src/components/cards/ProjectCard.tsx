@@ -11,13 +11,26 @@ interface ProjectCardProps {
 }
 
 const cardVariants = {
-  initial: {
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
+  visible: {
+    opacity: 1,
     y: 0,
-    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
   },
   hover: {
     y: -6,
     scale: 1.01,
+    transition: {
+      type: "spring",
+      stiffness: 300,
+      damping: 20,
+    },
   },
 };
 
@@ -51,13 +64,13 @@ export default function ProjectCard({
     <motion.a
       href={link ?? "#"}
       variants={cardVariants}
-      initial="initial"
+      initial="hidden"
+      whileInView="visible"
       whileHover="hover"
       whileTap={{ scale: 0.98 }}
-      transition={{
-        type: "spring",
-        stiffness: 300,
-        damping: 20,
+      viewport={{
+        once: true,
+        amount: 0.2,
       }}
       className="w-full border border-slate-800 hover:border-slate-600 hover:cursor-pointer rounded-3xl p-5 text-white flex flex-col gap-5"
     >
