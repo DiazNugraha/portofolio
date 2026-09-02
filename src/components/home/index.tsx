@@ -1,4 +1,4 @@
-import { FooterLayout } from "../layout";
+import { FooterLayout, Sidebar } from "../layout";
 import { Meteors } from "../ui/meteors";
 import {
   AboutSection,
@@ -11,7 +11,7 @@ import {
 
 export default function HomePage() {
   return (
-    <div className="w-full h-full flex justify-center">
+    <div className="w-full h-full flex justify-center relative">
       {/* <div className="absolute w-full h-full overflow-hidden"> */}
       {/*   <Meteors number={11} className="" /> */}
       {/* </div> */}
@@ -26,6 +26,7 @@ export default function HomePage() {
           <FooterLayout />
         </div>
       </div>
+      <Sidebar />
     </div>
   );
 }
