@@ -1,7 +1,7 @@
 import { HoverEffect } from "../ui/card-hover-effect";
 import { CommonItem } from "@/types/common";
 import { useEffect, useState } from "react";
-import { FooterLayout } from "../layout";
+import { FooterLayout, MainLayout } from "../layout";
 
 const itemCollections: CommonItem[] = [
   {
@@ -81,15 +81,11 @@ export default function AppsPage() {
   }, []);
 
   return (
-    <div className="text-white w-full h-full flex justify-center">
-      <div className="lg:w-[45%] h-full p-10">
-        <h1 className="text-[30px] lg:text-[70px]">
-          Software I use as <br /> A Full Stack Developer
-        </h1>
-        <HoverEffect className="lg:grid-cols-2" showLink items={items} />
-
-        <FooterLayout />
-      </div>
-    </div>
+    <MainLayout>
+      <h1 className="text-[30px] lg:text-[70px]">
+        Software I use as <br /> A Full Stack Developer
+      </h1>
+      <HoverEffect className="lg:grid-cols-2" showLink items={items} />
+    </MainLayout>
   );
 }

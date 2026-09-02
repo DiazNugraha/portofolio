@@ -1,7 +1,7 @@
 import { CommonItem } from "@/types/common";
 import { useEffect, useState } from "react";
 import { HoverEffect } from "../ui/card-hover-effect";
-import { FooterLayout } from "../layout";
+import { MainLayout } from "../layout";
 
 const itemCollections: CommonItem[] = [
   {
@@ -95,16 +95,13 @@ export default function TechnologiesPage() {
   useEffect(() => {
     setItems(itemCollections);
   }, []);
-  return (
-    <div className="text-white w-full h-full flex justify-center">
-      <div className="lg:w-[45%] h-full p-10">
-        <h1 className="text-[30px] lg:text-[60px]">
-          Technologies I mostly use as <br /> A Full Stack Developer
-        </h1>
-        <HoverEffect className="lg:grid-cols-2" showLink items={items} />
 
-        <FooterLayout />
-      </div>
-    </div>
+  return (
+    <MainLayout>
+      <h1 className="text-[30px] lg:text-[60px]">
+        Technologies I mostly use as <br /> A Full Stack Developer
+      </h1>
+      <HoverEffect className="lg:grid-cols-2" showLink items={items} />
+    </MainLayout>
   );
 }
