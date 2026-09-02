@@ -1,4 +1,5 @@
 import {
+  CpuIcon,
   HomeIcon,
   KeyboardIcon,
   LucideIcon,
@@ -18,12 +19,12 @@ type INavigation = {
 const navigations: INavigation[] = [
   {
     icon: HomeIcon,
-    url: "",
+    url: "/",
     label: "Home",
   },
   {
     icon: UserIcon,
-    url: "",
+    url: "/",
     label: "About",
   },
   {
@@ -32,13 +33,18 @@ const navigations: INavigation[] = [
     label: "Projects",
   },
   {
+    icon: CpuIcon,
+    url: "/technologies",
+    label: "Tech Stack",
+  },
+  {
     icon: KeyboardIcon,
-    url: "",
+    url: "/apps",
     label: "Toolstack",
   },
   {
     icon: NotebookPenIcon,
-    url: "",
+    url: "/",
     label: "Blog",
   },
 ];
