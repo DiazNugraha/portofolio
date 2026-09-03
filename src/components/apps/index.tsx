@@ -82,7 +82,7 @@ export default function AppsPage() {
 
   return (
     <MainLayout>
-      <h1 className="text-[30px] lg:text-[70px]">
+      <h1 className="w-full text-start text-lg lg:text-3xl">
         Software I use as <br /> A Full Stack Developer
       </h1>
       <HoverEffect className="lg:grid-cols-2" showLink items={items} />

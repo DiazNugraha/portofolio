@@ -98,7 +98,7 @@ export default function TechnologiesPage() {
 
   return (
     <MainLayout>
-      <h1 className="text-[30px] lg:text-[60px]">
+      <h1 className="w-full text-start text-lg lg:text-3xl">
         Technologies I mostly use as <br /> A Full Stack Developer
       </h1>
       <HoverEffect className="lg:grid-cols-2" showLink items={items} />
