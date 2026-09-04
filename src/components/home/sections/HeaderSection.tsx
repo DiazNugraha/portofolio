@@ -89,6 +89,7 @@ function ButtonWrapper({
         damping: 20,
       }}
       href={link}
+      target="_blank"
       className="rounded-full bg-slate-300  h-5 w-5 flex items-center justify-center"
     >
       {children}
