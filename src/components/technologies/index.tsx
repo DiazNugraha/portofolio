@@ -1,7 +1,7 @@
 import { CommonItem } from "@/types/common";
 import { useEffect, useState } from "react";
-import { HoverEffect } from "../ui/card-hover-effect";
 import { MainLayout } from "../layout";
+import { HoverEffect } from "../ui";
 
 const itemCollections: CommonItem[] = [
   {

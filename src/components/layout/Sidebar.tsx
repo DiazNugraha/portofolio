@@ -24,7 +24,7 @@ const navigations: INavigation[] = [
   },
   {
     icon: UserIcon,
-    url: "/",
+    url: "/about",
     label: "About",
   },
   {

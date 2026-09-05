@@ -1,9 +1,5 @@
-import AppsPage from "@/components/apps";
+import { AppsPage } from "@/components";
 
 export default function Apps() {
-  return (
-    <div className="">
-      <AppsPage />
-    </div>
-  );
+  return <AppsPage />;
 }

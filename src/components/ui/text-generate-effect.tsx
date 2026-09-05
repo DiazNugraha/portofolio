@@ -1,7 +1,6 @@
 "use client";
 import { useEffect } from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
-import { cn } from "@/utils/cn";
 import { twMerge } from "tailwind-merge";
 
 export const TextGenerateEffect = ({
@@ -22,7 +21,7 @@ export const TextGenerateEffect = ({
       {
         duration: 2,
         delay: stagger(0.2),
-      }
+      },
     );
   }, [scope.current]);
 
@@ -47,7 +46,7 @@ export const TextGenerateEffect = ({
     <div
       className={twMerge(
         "dark:text-white text-black leading-snug tracking-wide",
-        className
+        className,
       )}
     >
       {renderWords()}

@@ -1,9 +1,5 @@
-import TechnologiesPage from "@/components/technologies";
+import { TechnologiesPage } from "@/components";
 
 export default function Technologies() {
-  return (
-    <div className="">
-      <TechnologiesPage />
-    </div>
-  );
+  return <TechnologiesPage />;
 }
