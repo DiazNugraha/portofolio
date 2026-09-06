@@ -1,4 +1,4 @@
-import { HomePage } from "@/components";
+import { HomePage } from "@/features";
 import { LenisProvider } from "@/providers";
 
 export default function Home() {

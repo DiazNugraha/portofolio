@@ -1,5 +1,4 @@
-import { HoverEffect } from "../ui/card-hover-effect";
-import { LampContainer } from "../ui/lamp-container";
+import { HoverEffect, LampContainer } from "@/components";
 
 export default function Information() {
   const items: {
@@ -30,9 +29,13 @@ export default function Information() {
     },
   ];
   return (
-    <LampContainer className="w-full h-full flex flex-col justify-center items-center gap-4 mt-10">
+    <LampContainer className="h-full flex flex-col justify-center items-center gap-4 mt-10">
       <h1 className="text-white md:text-3xl">SKILLS</h1>
-      <HoverEffect items={items} isContentCentered={true} />
+      <HoverEffect
+        className="lg:grid-cols-2"
+        items={items}
+        isContentCentered={true}
+      />
     </LampContainer>
   );
 }

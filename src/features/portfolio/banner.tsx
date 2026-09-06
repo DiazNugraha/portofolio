@@ -1,10 +1,12 @@
-import Card from "../ui/card";
-import { TextGenerateEffect } from "../ui/text-generate-effect.";
-import CardShimmer from "../ui/card-shimmer";
-import GithubIcon from "../ui/icons/github-icon";
-import LinkedinIcon from "../ui/icons/linkedin-icon";
-import TwitterIcon from "../ui/icons/twitter-icon";
-import GmailIcon from "../ui/icons/gmail-icons";
+import {
+  GithubIcon,
+  GmailIcon,
+  LinkedinIcon,
+  TwitterIcon,
+  TextGenerateEffect,
+} from "@/components";
+import Card from "@/components/ui/card";
+import CardShimmer from "@/components/ui/card-shimmer";
 
 export default function Banner() {
   return (

@@ -1,5 +1,5 @@
+import { BackgroundGradient } from "@/components";
 import Image from "next/image";
-import { BackgroundGradient } from "../ui/background-gradient";
 
 export default function Profile() {
   return (

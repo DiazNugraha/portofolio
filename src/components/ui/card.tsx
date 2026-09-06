@@ -8,12 +8,12 @@ interface CardProps {
   link: string;
 }
 
-export default function Card(props: Readonly<CardProps>) {
+function Card(props: Readonly<CardProps>) {
   return (
     <div
       className={twMerge(
         "bg-[#363636]/30 hover:bg-[#363636] hover:scale-110 hover:scale-x transform transition duration-y flex flex-col justify-around w-full h-full p-5 cursor-pointer",
-        props.className
+        props.className,
       )}
     >
       <div className="flex flex-col">
@@ -39,3 +39,5 @@ export default function Card(props: Readonly<CardProps>) {
     </div>
   );
 }
+
+export default Card;
