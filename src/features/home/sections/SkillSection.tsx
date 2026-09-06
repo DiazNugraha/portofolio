@@ -1,6 +1,7 @@
 import { PropsWithChildren } from "react";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 export default function SkillSection() {
   return (
@@ -100,9 +101,11 @@ interface ISkillItemProps {
   url?: string;
 }
 
+const MotionLink = motion(Link);
+
 function SkillItem({ name, imageUrl, url }: ISkillItemProps) {
   return (
-    <motion.a
+    <MotionLink
       href={url ?? "#"}
       initial="hidden"
       whileInView="visible"
@@ -140,6 +143,6 @@ function SkillItem({ name, imageUrl, url }: ISkillItemProps) {
           <ChevronRight width={16} />
         </motion.button>
       </motion.div>
-    </motion.a>
+    </MotionLink>
   );
 }

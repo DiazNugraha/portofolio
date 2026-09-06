@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 interface ExperienceCardProps {
   title: string;
@@ -46,6 +47,8 @@ const buttonVariants = {
   },
 };
 
+const MotionLink = motion(Link);
+
 export default function ExperienceCard({
   title,
   imageUrl,
@@ -55,7 +58,7 @@ export default function ExperienceCard({
   industryDomain,
 }: ExperienceCardProps) {
   return (
-    <motion.a
+    <MotionLink
       href={link ?? "#"}
       initial="hidden"
       whileInView="visible"
@@ -100,6 +103,6 @@ export default function ExperienceCard({
 
         <h3 className="text-sm text-slate-500">{industryDomain}</h3>
       </motion.div>
-    </motion.a>
+    </MotionLink>
   );
 }

@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Link from "next/link";
 
 type INavigation = {
   icon: LucideIcon;
@@ -65,6 +66,8 @@ const buttonVariants = {
   },
 };
 
+const MotionLink = motion(Link);
+
 export default function Sidebar() {
   const [isNavHovered, setIsNavHovered] = useState<boolean>(false);
 
@@ -106,7 +109,7 @@ export default function Sidebar() {
           const Icon = navigation.icon;
 
           return (
-            <motion.a
+            <MotionLink
               key={index}
               href={navigation.url}
               variants={buttonVariants}
@@ -143,7 +146,7 @@ export default function Sidebar() {
                   {navigation.label}
                 </motion.span>
               )}
-            </motion.a>
+            </MotionLink>
           );
         })}
       </motion.div>

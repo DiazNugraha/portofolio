@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 interface ProjectCardProps {
   title: string;
@@ -46,6 +47,8 @@ const buttonVariants = {
   },
 };
 
+const MotionLink = motion(Link);
+
 export default function ProjectCard({
   title,
   imageUrl,
@@ -55,7 +58,7 @@ export default function ProjectCard({
   link,
 }: ProjectCardProps) {
   return (
-    <motion.a
+    <MotionLink
       href={link ?? "#"}
       initial="hidden"
       whileInView="visible"
@@ -104,7 +107,7 @@ export default function ProjectCard({
           ))}
         </div>
       </motion.div>
-    </motion.a>
+    </MotionLink>
   );
 }
 
