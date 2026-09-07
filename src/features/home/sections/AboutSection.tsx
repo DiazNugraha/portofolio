@@ -12,7 +12,6 @@ export default function AboutSection() {
       }}
       className="flex flex-col gap-2"
     >
-      {/* <h1 className="text-lg lg:text-2xl">About</h1> */}
       <div className="bg-transparent w-full rounded-xl flex flex-col gap-2">
         <p className="text-justify text-xs lg:text-sm">
           Hi there 👋 thanks for visiting, I&lsquo;m a Full Stack Software
