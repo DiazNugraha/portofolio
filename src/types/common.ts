@@ -1,3 +1,5 @@
+import { LucideIcon } from "lucide-react";
+
 export interface ExperienceItem {
   title: string;
   period: string;
@@ -17,4 +19,10 @@ export interface CommonItem {
   description: string;
   link?: string;
   img?: string;
+}
+
+export interface IMenuNavigation {
+  icon: LucideIcon;
+  url: string;
+  label: string;
 }

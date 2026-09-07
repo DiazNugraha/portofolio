@@ -1,54 +1,7 @@
-import {
-  CpuIcon,
-  HomeIcon,
-  KeyboardIcon,
-  LucideIcon,
-  NotebookPenIcon,
-  SquareKanbanIcon,
-  UserIcon,
-} from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Link from "next/link";
-
-type INavigation = {
-  icon: LucideIcon;
-  url: string;
-  label: string;
-};
-
-const navigations: INavigation[] = [
-  {
-    icon: HomeIcon,
-    url: "/",
-    label: "Home",
-  },
-  {
-    icon: UserIcon,
-    url: "/about",
-    label: "About",
-  },
-  {
-    icon: SquareKanbanIcon,
-    url: "",
-    label: "Projects",
-  },
-  {
-    icon: CpuIcon,
-    url: "/technologies",
-    label: "Tech Stack",
-  },
-  {
-    icon: KeyboardIcon,
-    url: "/apps",
-    label: "Toolstack",
-  },
-  {
-    icon: NotebookPenIcon,
-    url: "/",
-    label: "Blog",
-  },
-];
+import { menuNavigations } from "@/constants";
 
 const buttonVariants = {
   rest: {
@@ -105,7 +58,7 @@ export default function Sidebar() {
           ease-out
         "
       >
-        {navigations.map((navigation, index) => {
+        {menuNavigations.map((navigation, index) => {
           const Icon = navigation.icon;
 
           return (

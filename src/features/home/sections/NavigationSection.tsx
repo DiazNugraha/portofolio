@@ -1,5 +1,5 @@
 import { HoverEffect } from "@/components/ui/card-hover-effect";
-import { MenuNavigations } from "@/constants";
+import { menuNavigations2 } from "@/constants";
 import { motion } from "framer-motion";
 
 export default function NavigationSection() {
@@ -13,7 +13,7 @@ export default function NavigationSection() {
         ease: [0.22, 1, 0.36, 1],
       }}
     >
-      <HoverEffect className="lg:grid-cols-2" items={MenuNavigations} />
+      <HoverEffect className="lg:grid-cols-2" items={menuNavigations2} />
     </motion.section>
   );
 }
