@@ -1,10 +1,8 @@
-import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 import { PropsWithChildren } from "react";
 import { GithubIcon, GmailIcon, LinkedinIcon, TwitterIcon } from "../ui";
 
 export default function Footer() {
-  const route = useRouter();
   return (
     <motion.footer
       initial={{ opacity: 0, y: 30 }}
@@ -14,28 +12,16 @@ export default function Footer() {
         duration: 0.7,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className="w-full border-t-[0.5px] border-t-[#6f6f6f] flex flex-col text-[#CCCCCC] gap-6 pt-3"
+      className="w-full flex flex-col gap-4"
     >
-      <div className="flex justify-center lg:justify-start gap-2">
-        <a href="https://github.com/DiazNugraha" target="_blank">
-          Github
-        </a>
-        <a
-          href="https://www.linkedin.com/in/diaz-nugraha-820342246/"
-          target="_blank"
-        >
-          Linkedin
-        </a>
-        <a href="https://twitter.com/NugrahaDiaz_" target="_blank">
-          Twitter
-        </a>
-        <a href={`${route.basePath}/portfolio`} target="_blank">
-          Portfolio
-        </a>
+      <div className="w-full flex gap-4 justify-center items-center">
+        <div className="w-full bg-slate-600 h-[1px]"></div>
+        <ContactButtons />
+        <div className="w-full bg-slate-600 h-[1px]"></div>
       </div>
-      <div className="w-full flex flex-col lg:flex-row items-center lg:items-baseline justify-center lg:justify-between">
-        <span>Built with Next.Js, Tailwind and Vercel</span>
-        <span>&copy;2024 All rights reserved.</span>
+      <div className="flex flex-col gap-3 items-center">
+        <span>Thanks for visiting.</span>
+        <span className="text-slate-600">Next.js · Tailwind CSS · Vercel</span>
       </div>
     </motion.footer>
   );
@@ -43,18 +29,18 @@ export default function Footer() {
 
 function ContactButtons() {
   return (
-    <div className="flex gap-x-4 justify-start w-full">
+    <div className="flex gap-x-4">
       <ButtonWrapper link="https://github.com/DiazNugraha">
-        <GithubIcon width={12} />
+        <GithubIcon width={20} />
       </ButtonWrapper>
       <ButtonWrapper link="https://www.linkedin.com/in/diaz-nugraha-820342246/">
-        <LinkedinIcon width={12} />
+        <LinkedinIcon width={20} />
       </ButtonWrapper>
       <ButtonWrapper link="https://twitter.com/NugrahaDiaz_">
-        <TwitterIcon width={12} />
+        <TwitterIcon width={20} />
       </ButtonWrapper>
       <ButtonWrapper link="mailto:diaznugraha00@gmail.com">
-        <GmailIcon width={12} />
+        <GmailIcon width={20} />
       </ButtonWrapper>
     </div>
   );
@@ -79,7 +65,7 @@ function ButtonWrapper({
       }}
       href={link}
       target="_blank"
-      className="rounded-full bg-slate-300  h-5 w-5 flex items-center justify-center"
+      className="rounded-full bg-slate-600  h-10 w-10 flex items-center justify-center"
     >
       {children}
     </motion.a>
