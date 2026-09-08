@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import Link from "next/link";
 import { menuNavigations } from "@/constants";
+import { usePathname } from "next/navigation";
 
 const buttonVariants = {
   rest: {
@@ -23,6 +24,13 @@ const MotionLink = motion(Link);
 
 export default function Sidebar() {
   const [isNavHovered, setIsNavHovered] = useState<boolean>(false);
+
+  const pathname = usePathname();
+
+  const checkIsSelected = (path: string) => {
+    const splittedPathname = pathname.split("/");
+    return splittedPathname[1] === path;
+  };
 
   return (
     <div className="fixed z-50 left-10 top-1/2 -translate-y-1/2 text-white">
@@ -60,6 +68,7 @@ export default function Sidebar() {
       >
         {menuNavigations.map((navigation, index) => {
           const Icon = navigation.icon;
+          const isSelected = checkIsSelected(navigation.url.replace("/", ""));
 
           return (
             <MotionLink
@@ -85,7 +94,11 @@ export default function Sidebar() {
                 text-slate-600
               "
             >
-              <Icon width={24} height={24} className="shrink-0 text-inherit" />
+              <Icon
+                width={24}
+                height={24}
+                className={`shrink-0 ${isSelected ? "text-white" : "text-inherit"} `}
+              />
 
               {isNavHovered && (
                 <motion.span

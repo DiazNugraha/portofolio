@@ -21,7 +21,7 @@ export const menuNavigations: IMenuNavigation[] = [
   },
   {
     icon: SquareKanbanIcon,
-    url: "",
+    url: "/projects",
     label: "Projects",
   },
   {
@@ -36,7 +36,7 @@ export const menuNavigations: IMenuNavigation[] = [
   },
   {
     icon: NotebookPenIcon,
-    url: "/",
+    url: "/blog",
     label: "Blog",
   },
 ];
