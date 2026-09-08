@@ -14,22 +14,29 @@ const selectedProjects: {
     title: "Readiness Index",
     subtitle: "Professional · Full Stack @ INCIT",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
-    badges: ["Next.js", "Nest.js", "PostgreSQL"],
+      "An assessment platform that brings together industrial evaluation frameworks to help manufacturing organizations assess their transformation readiness.",
+    badges: ["React", "Vite", "Nest.js", "PostgreSQL", "AWS"],
   },
   {
     title: "Prioritise+ Marketplace",
     subtitle: "Professional · Full Stack @ INCIT",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
-    badges: ["Next.js", "Nest.js", "PostgreSQL"],
+      "A matchmaking platform that connects manufacturing companies with solution providers based on gaps identified through industry assessments.",
+    badges: [
+      "React",
+      "Vite",
+      "Nest.js",
+      "PostgreSQL",
+      "AWS",
+      "Vite Plugin Federation",
+    ],
   },
   {
     title: "Medqlab",
     subtitle: "Professional · Full Stack @ PT. Applimetis Parama Solusi",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
-    badges: ["Next.js", "Nest.js", "PostgreSQL"],
+      "A laboratory information system for managing laboratory workflows and related operational data.",
+    badges: ["Next.js", "Nest.js", "PostgreSQL", "RabbitMQ"],
   },
 ];
 

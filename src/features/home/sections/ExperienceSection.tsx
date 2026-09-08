@@ -14,14 +14,14 @@ const experiences: {
     title: "International Centre for Industrial Transformation (INCIT)",
     subtitle: "Full Stack Developer · Aug 2024 — Jun 2026",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+      "Developed and maintained enterprise web applications, contributing to frontend and backend development accross multiple platform modules.",
     industryDomain: "Enterprise Software · Full-time",
   },
   {
     title: "PT APPLIMETIS PARAMA SOLUTION",
     subtitle: "Full Stack Developer · Nov 2022 — Mar 2024",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+      "Developed and maintained enterprise web applications, contributing to frontend and backend development across multiple services and third-party integrations.",
     industryDomain: "Healthcare Information Technology · Full-time",
   },
 ];
