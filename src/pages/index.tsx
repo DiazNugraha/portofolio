@@ -1,10 +1,5 @@
 import { HomePage } from "@/features";
-import { LenisProvider } from "@/providers";
 
 export default function Home() {
-  return (
-    <LenisProvider>
-      <HomePage />
-    </LenisProvider>
-  );
+  return <HomePage />;
 }
