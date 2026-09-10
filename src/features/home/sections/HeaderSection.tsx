@@ -7,19 +7,11 @@ import LinkedinIcon from "@/components/ui/icons/linkedin-icon";
 import TwitterIcon from "@/components/ui/icons/twitter-icon";
 import { PropsWithChildren } from "react";
 import { motion } from "framer-motion";
+import { MotionSection } from "@/components";
 
 export default function HeaderSection() {
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
-      transition={{
-        duration: 0.7,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-      className="flex flex-col gap-3 w-full"
-    >
+    <MotionSection className="flex flex-col gap-3 w-full">
       <div className="flex flex-col gap-3 lg:gap-0 lg:flex-row lg:justify-between lg:items-center">
         <div className="flex flex-col gap-1 text-white ">
           <span className="text-xl font-bold">Diaz Nugraha</span>
@@ -48,7 +40,7 @@ export default function HeaderSection() {
           />
         </div>
       </div>
-    </motion.section>
+    </MotionSection>
   );
 }
 

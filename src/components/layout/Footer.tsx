@@ -1,19 +1,11 @@
 import { motion } from "framer-motion";
 import { PropsWithChildren } from "react";
 import { GithubIcon, GmailIcon, LinkedinIcon, TwitterIcon } from "../ui";
+import { MotionSection } from "..";
 
 export default function Footer() {
   return (
-    <motion.footer
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
-      transition={{
-        duration: 0.7,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-      className="w-full flex flex-col gap-4"
-    >
+    <MotionSection className="w-full flex flex-col gap-4">
       <div className="w-full flex gap-4 justify-center items-center">
         <div className="w-full bg-slate-600 h-[1px]"></div>
         <ContactButtons />
@@ -23,7 +15,7 @@ export default function Footer() {
         <span>Thanks for visiting.</span>
         <span className="text-slate-600">Next.js · Tailwind CSS · Vercel</span>
       </div>
-    </motion.footer>
+    </MotionSection>
   );
 }
 

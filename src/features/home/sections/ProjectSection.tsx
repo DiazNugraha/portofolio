@@ -1,3 +1,4 @@
+import { MotionSection } from "@/components";
 import { ProjectCard } from "@/components/cards";
 import { motion } from "framer-motion";
 import { ArrowRightIcon } from "lucide-react";
@@ -55,16 +56,7 @@ const hoverVariants = {
 
 export default function ProjectSection() {
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
-      transition={{
-        duration: 0.7,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-      className="flex flex-col gap-2"
-    >
+    <MotionSection className="flex flex-col gap-2">
       <h1 className="text-lg lg:text-xl font-semibold">Selected Projects</h1>
       <div className="flex flex-col gap-3">
         {selectedProjects.map((project, index) => (
@@ -87,6 +79,6 @@ export default function ProjectSection() {
           <ArrowRightIcon width={14} className="text-inherit" />
         </MotionLink>
       </div>
-    </motion.section>
+    </MotionSection>
   );
 }

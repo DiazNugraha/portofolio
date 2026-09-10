@@ -1,19 +1,9 @@
 import { PropsWithChildren } from "react";
-import { motion } from "framer-motion";
-import { ButtonLink } from "@/components";
+import { ButtonLink, MotionSection } from "@/components";
 
 export default function SkillSection() {
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
-      transition={{
-        duration: 0.7,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-      className="flex flex-col gap-3 w-full"
-    >
+    <MotionSection className="flex flex-col gap-3 w-full">
       <h1 className="text-lg lg:text-xl font-semibold">Skills</h1>
       <Wrapper title="Frontend">
         <ButtonLink name="React" />
@@ -39,7 +29,7 @@ export default function SkillSection() {
         <ButtonLink name="AWS S3" />
         <ButtonLink name="Vite Plugin Federation" />
       </Wrapper>
-    </motion.section>
+    </MotionSection>
   );
 }
 
