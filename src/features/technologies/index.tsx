@@ -1,8 +1,8 @@
-import { HoverEffect, MainLayout } from "@/components";
+import { ButtonLink, MainLayout, MotionSection } from "@/components";
 import { CommonItem } from "@/types/common";
-import { useEffect, useState } from "react";
+import { PropsWithChildren, useEffect, useState } from "react";
 
-const itemCollections: CommonItem[] = [
+const frontendCollections: CommonItem[] = [
   {
     title: "Next Js",
     description:
@@ -25,6 +25,9 @@ const itemCollections: CommonItem[] = [
     description: "The utility-first CSS Framework",
     link: "https://tailwindcss.com/",
   },
+];
+
+const backendCollections: CommonItem[] = [
   {
     title: "Nest Js",
     description:
@@ -46,6 +49,9 @@ const itemCollections: CommonItem[] = [
     description: "PHP Backend Framework",
     link: "https://laravel.com/",
   },
+];
+
+const databaseCollections: CommonItem[] = [
   {
     title: "MySQL",
     description: "Open-source relational database management system",
@@ -71,6 +77,9 @@ const itemCollections: CommonItem[] = [
     description: "Message broker for message queueing",
     link: "https://www.rabbitmq.com/",
   },
+];
+
+const toolCollections: CommonItem[] = [
   {
     title: "Docker",
     description: "Containerization platform",
@@ -81,6 +90,9 @@ const itemCollections: CommonItem[] = [
     description: "Version control system",
     link: "https://git-scm.com/",
   },
+];
+
+const otherCollections: CommonItem[] = [
   {
     title: "Rasa AI",
     description: "Conversational Chatbot Framework based on NLP",
@@ -89,18 +101,81 @@ const itemCollections: CommonItem[] = [
 ];
 
 export default function TechnologiesPage() {
-  const [items, setItems] = useState<CommonItem[]>([]);
-
-  useEffect(() => {
-    setItems(itemCollections);
-  }, []);
-
   return (
     <MainLayout>
-      <h1 className="w-full text-start text-lg lg:text-3xl">
-        Technologies I mostly use as <br /> A Full Stack Developer
-      </h1>
-      <HoverEffect className="lg:grid-cols-2" showLink items={items} />
+      <MotionSection className="w-full flex flex-col gap-2">
+        <h1 className="text-start text-lg lg:text-3xl">Technologies</h1>
+        <p className="text-xs lg:text-sm text-slate-400">
+          These are the technologies I usually use or at least have some
+          experience with as a Full Stack Web Developer.
+        </p>
+      </MotionSection>
+
+      <MotionSection className="w-full flex flex-col gap-5">
+        <Wrapper title="Frontend">
+          {frontendCollections.map((collection) => (
+            <ButtonLink
+              name={collection.title}
+              description={collection.description}
+              key={collection.title}
+              url={collection.link}
+            />
+          ))}
+        </Wrapper>
+        <Wrapper title="Backend">
+          {backendCollections.map((collection) => (
+            <ButtonLink
+              name={collection.title}
+              description={collection.description}
+              key={collection.title}
+              url={collection.link}
+            />
+          ))}
+        </Wrapper>
+        <Wrapper title="Databasse & Messaging">
+          {databaseCollections.map((collection) => (
+            <ButtonLink
+              name={collection.title}
+              description={collection.description}
+              key={collection.title}
+              url={collection.link}
+            />
+          ))}
+        </Wrapper>
+        <Wrapper title="Tools">
+          {toolCollections.map((collection) => (
+            <ButtonLink
+              name={collection.title}
+              description={collection.description}
+              key={collection.title}
+              url={collection.link}
+            />
+          ))}
+        </Wrapper>
+        <Wrapper title="Other Framework">
+          {otherCollections.map((collection) => (
+            <ButtonLink
+              name={collection.title}
+              description={collection.description}
+              key={collection.title}
+              url={collection.link}
+            />
+          ))}
+        </Wrapper>
+      </MotionSection>
     </MainLayout>
+  );
+}
+
+interface IWrapperProps {
+  title: string;
+}
+
+function Wrapper({ title, children }: IWrapperProps & PropsWithChildren) {
+  return (
+    <div className="flex flex-col gap-2">
+      <h3 className="text-sm lg:text-base font-medium">{title}</h3>
+      <div className="grid grid-cols-2 gap-2">{children}</div>
+    </div>
   );
 }

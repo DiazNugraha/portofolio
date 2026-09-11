@@ -42,11 +42,17 @@ interface IButtonLinkProps {
   name: string;
   imageUrl?: string;
   url?: string;
+  description?: string;
 }
 
 const MotionLink = motion(Link);
 
-export default function ButtonLink({ name, imageUrl, url }: IButtonLinkProps) {
+export default function ButtonLink({
+  name,
+  imageUrl,
+  url,
+  description,
+}: IButtonLinkProps) {
   return (
     <MotionLink
       href={url ?? "#"}
@@ -69,10 +75,15 @@ export default function ButtonLink({ name, imageUrl, url }: IButtonLinkProps) {
           stiffness: 300,
           damping: 20,
         }}
-        className="flex-1 cursor-pointer border-[1px] border-slate-800 hover:boder-slate-600 flex py-2 px-3 justify-between items-center rounded-xl"
+        className="flex-1 cursor-pointer border-[1px] border-slate-800 hover:border-slate-600 flex py-2 px-3 justify-between items-center rounded-xl"
       >
-        <div className="flex gap-2">
-          <h3 className="text-[10px] lg:text-xs">{name}</h3>
+        <div className="flex flex-col gap-2">
+          <h3 className="text-[10px] lg:text-xs font-medium">{name}</h3>
+          {description && (
+            <p className="text-[8px] lg:text-[10px] text-slate-500">
+              {description}
+            </p>
+          )}
         </div>
 
         <motion.button
