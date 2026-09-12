@@ -32,7 +32,7 @@ const backendCollections: CommonItem[] = [
     title: "Nest Js",
     description:
       "Node.js framework using TypeScript and inspired by Angular's architecture",
-    link: "https://vitejs.dev/",
+    link: "https://nestjs.com/",
   },
   {
     title: "Flask",
