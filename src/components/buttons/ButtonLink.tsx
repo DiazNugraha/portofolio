@@ -67,6 +67,7 @@ export default function ButtonLink({
         duration: 0.6,
         ease: "easeOut",
       }}
+      target="_blank"
     >
       <motion.div
         variants={hoverVariants}
