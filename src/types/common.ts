@@ -19,6 +19,7 @@ export interface CommonItem {
   description: string;
   link?: string;
   img?: string;
+  icon?: LucideIcon | JSX.Element;
 }
 
 export interface IMenuNavigation {

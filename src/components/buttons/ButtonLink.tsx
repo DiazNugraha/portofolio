@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, LucideIcon } from "lucide-react";
 import Link from "next/link";
 
 const cardVariants = {
@@ -41,6 +41,7 @@ const buttonVariants = {
 interface IButtonLinkProps {
   name: string;
   imageUrl?: string;
+  icon?: LucideIcon | JSX.Element;
   url?: string;
   description?: string;
 }
@@ -50,9 +51,11 @@ const MotionLink = motion(Link);
 export default function ButtonLink({
   name,
   imageUrl,
+  icon,
   url,
   description,
 }: IButtonLinkProps) {
+  const Icon = icon;
   return (
     <MotionLink
       href={url ?? "#"}
@@ -77,13 +80,16 @@ export default function ButtonLink({
         }}
         className="flex-1 cursor-pointer border-[1px] border-slate-800 hover:border-slate-600 flex py-2 px-3 justify-between items-center rounded-xl"
       >
-        <div className="flex flex-col gap-2">
-          <h3 className="text-[10px] lg:text-xs font-medium">{name}</h3>
-          {description && (
-            <p className="text-[8px] lg:text-[10px] text-slate-500">
-              {description}
-            </p>
-          )}
+        <div className="flex gap-2 items-center">
+          {Icon ? typeof Icon === "function" ? <Icon /> : Icon : null}
+          <div className="flex flex-col gap-2">
+            <h3 className="text-[10px] lg:text-xs font-medium">{name}</h3>
+            {description && (
+              <p className="text-[8px] lg:text-[10px] text-slate-500">
+                {description}
+              </p>
+            )}
+          </div>
         </div>
 
         <motion.button
