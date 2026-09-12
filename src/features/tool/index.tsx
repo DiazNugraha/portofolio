@@ -1,29 +1,40 @@
-import { HoverEffect, MainLayout } from "@/components";
+import { ButtonLink, MainLayout, MotionSection } from "@/components";
 import { CommonItem } from "@/types/common";
-import { useEffect, useState } from "react";
+import { PropsWithChildren } from "react";
 
-const itemCollections: CommonItem[] = [
+const osCollections: CommonItem[] = [
   {
     title: "Arch Linux",
     description: "Linux distribution I use as my main OS",
     link: "https://www.archlinux.org/",
   },
+  {
+    title: "Windows",
+    description:
+      "I use windows as my secondary OS. Mostly only used for gaming.",
+    link: "https://www.microsoft.com/en-us/windows",
+  },
+  {
+    title: "I3 Window Manager",
+    description: "popular tiling window manager that I use for Arch Linux",
+    link: "https://i3wm.org/",
+  },
+];
 
+const editorCollections: CommonItem[] = [
   {
     title: "Visual Studio Code",
     description: "Open Source text editor provided by microsoft",
     link: "https://github.com/microsoft/vscode",
   },
   {
-    title: "NeoVim",
-    description: "Vim-fork focused on extensibility and usability",
-    link: "https://neovim.io/",
+    title: "LazyVim",
+    description: "NeoVim based text editor with pre-configured features",
+    link: "https://www.lazyvim.org/",
   },
-  {
-    title: "Figma",
-    description: "Web base graphics design for UI, UX and prototyping",
-    link: "https://www.figma.com/",
-  },
+];
+
+const gitCollections: CommonItem[] = [
   {
     title: "Github",
     description: "Code hosting platform",
@@ -35,56 +46,96 @@ const itemCollections: CommonItem[] = [
     link: "https://gitlab.com/",
   },
   {
-    title: "Firefox",
-    description: "Web browser",
-    link: "https://www.mozilla.org/en-US/firefox/new/",
+    title: "Azure DevOps",
+    description: "Code hosting platform",
+    link: "https://azure.microsoft.com/en-us/products/devops",
+  },
+];
+
+const configCollections: CommonItem[] = [
+  {
+    title: "LazyVim Config",
+    description: "My usual lazyvim config",
+    link: "https://github.com/DiazNugraha/nvim-config",
   },
   {
-    title: "Google Chrome",
-    description: "Powerfull web browser provided by Chromium",
-    link: "https://www.google.com/chrome/",
+    title: "I3 Status Rust",
+    description: "I3 status bar config",
+    link: "https://github.com/DiazNugraha/i3status-rust-config",
   },
   {
-    title: "Postman",
-    description: "API testing tool",
-    link: "https://www.postman.com/",
-  },
-  {
-    title: "MongoDB Compass",
-    description: "MongoDB UI",
-    link: "https://www.mongodb.com/products/compass",
-  },
-  {
-    title: "DBeaver",
-    description: "Database management tool",
-    link: "https://dbeaver.io/",
-  },
-  {
-    title: "Notion",
-    description:
-      "The All-in-one workkspace for your notes, tasks, and databases",
-    link: "https://www.notion.so/",
-  },
-  {
-    title: "Trello",
-    description: "Task management tool",
-    link: "https://trello.com/",
+    title: "I3 Config",
+    description: "Latest I3 config I use",
+    link: "https://github.com/DiazNugraha/i3-config",
   },
 ];
 
 export default function Tool() {
-  const [items, setItems] = useState<CommonItem[]>([]);
-
-  useEffect(() => {
-    setItems(itemCollections);
-  }, []);
-
   return (
     <MainLayout>
-      <h1 className="w-full text-start text-lg lg:text-3xl">
-        Software I use as <br /> A Full Stack Developer
-      </h1>
-      <HoverEffect className="lg:grid-cols-2" showLink items={items} />
+      <MotionSection className="w-full flex flex-col gap-2">
+        <h1 className="text-start text-lg lg:text-3xl">Software</h1>
+        <p className="text-xs lg:text-sm text-slate-400">
+          These are the software I usually use to support my casual and working
+          activities.
+        </p>
+      </MotionSection>
+
+      <MotionSection className="w-full flex flex-col gap-5">
+        <Wrapper title="Config Collections">
+          {configCollections.map((collection) => (
+            <ButtonLink
+              name={collection.title}
+              description={collection.description}
+              key={collection.title}
+              url={collection.link}
+            />
+          ))}
+        </Wrapper>
+        <Wrapper title="Operating System">
+          {osCollections.map((collection) => (
+            <ButtonLink
+              name={collection.title}
+              description={collection.description}
+              key={collection.title}
+              url={collection.link}
+            />
+          ))}
+        </Wrapper>
+        <Wrapper title="Code Editor">
+          {editorCollections.map((collection) => (
+            <ButtonLink
+              name={collection.title}
+              description={collection.description}
+              key={collection.title}
+              url={collection.link}
+            />
+          ))}
+        </Wrapper>
+        <Wrapper title="Git Platforms">
+          {gitCollections.map((collection) => (
+            <ButtonLink
+              name={collection.title}
+              description={collection.description}
+              key={collection.title}
+              url={collection.link}
+            />
+          ))}
+        </Wrapper>
+      </MotionSection>
     </MainLayout>
+  );
+}
+
+interface IWrapperProps {
+  title: string;
+}
+
+function Wrapper({ title, children }: IWrapperProps & PropsWithChildren) {
+  return (
+    <div className="flex flex-col gap-2">
+      <h3 className="text-sm lg:text-base font-medium">{title}</h3>
+      <div className="grid grid-cols-2 gap-2">{children}</div>
+    </div>
   );
 }
