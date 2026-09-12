@@ -3,6 +3,7 @@ import {
   CpuIcon,
   HomeIcon,
   KeyboardIcon,
+  MailOpenIcon,
   NotebookPenIcon,
   SquareKanbanIcon,
 } from "lucide-react";
@@ -32,6 +33,11 @@ export const menuNavigations: IMenuNavigation[] = [
     icon: NotebookPenIcon,
     url: "/blog",
     label: "Blog",
+  },
+  {
+    icon: MailOpenIcon,
+    url: "/contact",
+    label: "Contact",
   },
 ];
 
