@@ -5,7 +5,6 @@ import {
   KeyboardIcon,
   NotebookPenIcon,
   SquareKanbanIcon,
-  UserIcon,
 } from "lucide-react";
 
 export const menuNavigations: IMenuNavigation[] = [
@@ -15,23 +14,18 @@ export const menuNavigations: IMenuNavigation[] = [
     label: "Home",
   },
   {
-    icon: UserIcon,
-    url: "/about",
-    label: "About",
-  },
-  {
     icon: SquareKanbanIcon,
     url: "/projects",
     label: "Projects",
   },
   {
     icon: CpuIcon,
-    url: "/technologies",
+    url: "/technology",
     label: "Tech Stack",
   },
   {
     icon: KeyboardIcon,
-    url: "/apps",
+    url: "/tool",
     label: "Toolstack",
   },
   {

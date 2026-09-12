@@ -7,7 +7,7 @@ import {
   SkillSection,
 } from "./sections";
 
-export default function HomePage() {
+export default function Home() {
   return (
     <MainLayout>
       <HeaderSection />

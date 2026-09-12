@@ -72,7 +72,7 @@ const itemCollections: CommonItem[] = [
   },
 ];
 
-export default function AppsPage() {
+export default function Tool() {
   const [items, setItems] = useState<CommonItem[]>([]);
 
   useEffect(() => {

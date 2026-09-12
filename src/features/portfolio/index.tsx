@@ -22,7 +22,7 @@ import Profile from "./profile";
 //   );
 // }
 
-export default function PortfolioPage() {
+export default function Portfolio() {
   return (
     <main>
       <section className="mx-auto w-full max-w-2xl px-4 sm:px-6 lg:px-8 my-10 flex flex-col gap-y-14">

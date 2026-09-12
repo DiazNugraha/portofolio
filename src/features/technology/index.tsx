@@ -1,6 +1,6 @@
 import { ButtonLink, MainLayout, MotionSection } from "@/components";
 import { CommonItem } from "@/types/common";
-import { PropsWithChildren, useEffect, useState } from "react";
+import { PropsWithChildren } from "react";
 
 const frontendCollections: CommonItem[] = [
   {
@@ -100,7 +100,7 @@ const otherCollections: CommonItem[] = [
   },
 ];
 
-export default function TechnologiesPage() {
+export default function Technology() {
   return (
     <MainLayout>
       <MotionSection className="w-full flex flex-col gap-2">

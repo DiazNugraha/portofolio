@@ -1,5 +1,5 @@
-import { PortfolioPage } from "@/features";
+import { Portfolio } from "@/features";
 
-export default function Portfolio() {
-  return <PortfolioPage />;
+export default function PortfolioPage() {
+  return <Portfolio />;
 }
