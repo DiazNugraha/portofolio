@@ -1,7 +1,14 @@
 import { PropsWithChildren, useEffect, useMemo, useState } from "react";
 import { Footer, HamburgerMenu, Sidebar } from ".";
 
-export default function MainLayout({ children }: PropsWithChildren) {
+interface IMainLayoutProps {
+  hideFooter?: boolean;
+}
+
+export default function MainLayout({
+  hideFooter = false,
+  children,
+}: IMainLayoutProps & PropsWithChildren) {
   const [screenSize, setScreenSize] = useState<number | undefined>(undefined);
 
   const isMobileSize = useMemo(() => {
@@ -21,7 +28,7 @@ export default function MainLayout({ children }: PropsWithChildren) {
       <div className="lg:w-[30%] h-full">
         <div className="flex px-5 py-36 text-white flex-col items-center gap-y-20">
           {children}
-          <Footer />
+          {!hideFooter && <Footer />}
         </div>
       </div>
 
