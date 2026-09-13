@@ -6,22 +6,20 @@ export default function SkillSection() {
     <MotionSection className="flex flex-col gap-3 w-full">
       <h1 className="text-lg lg:text-xl font-semibold">Skills</h1>
       <Wrapper title="Frontend">
-        <ButtonLink name="React" />
-        <ButtonLink name="Next.js" />
-        <ButtonLink name="Typescript" />
-        <ButtonLink name="Javascript" />
+        <ButtonLink name="React Js" />
+        <ButtonLink name="Next Js" />
+        <ButtonLink name="Vue Js" />
         <ButtonLink name="Vite" />
-        <ButtonLink name="Tailwind" />
+        <ButtonLink name="Tailwind CSS" />
       </Wrapper>
       <Wrapper title="Backend">
-        <ButtonLink name="Nest.js" />
-        <ButtonLink name="Node.js" />
+        <ButtonLink name="Nest Js" />
+        <ButtonLink name="Node Js" />
         <ButtonLink name="Laravel Lumen" />
-        <ButtonLink name="REST APIs" />
-        <ButtonLink name="WebSockets" />
       </Wrapper>
       <Wrapper title="Database & Messaging">
         <ButtonLink name="PostgreSQL" />
+        <ButtonLink name="MySQL" />
         <ButtonLink name="Redis" />
         <ButtonLink name="RabbitMQ" />
       </Wrapper>
