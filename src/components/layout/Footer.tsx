@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { PropsWithChildren } from "react";
-import { GithubIcon, GmailIcon, LinkedinIcon, TwitterIcon } from "../ui";
+import React, { PropsWithChildren, ReactElement } from "react";
 import { MotionSection } from "..";
+import { contactCollections } from "@/constants";
 
 export default function Footer() {
   return (
@@ -22,18 +22,13 @@ export default function Footer() {
 function ContactButtons() {
   return (
     <div className="flex gap-x-4">
-      <ButtonWrapper link="https://github.com/DiazNugraha">
-        <GithubIcon width={20} />
-      </ButtonWrapper>
-      <ButtonWrapper link="https://www.linkedin.com/in/diaz-nugraha-820342246/">
-        <LinkedinIcon width={20} />
-      </ButtonWrapper>
-      <ButtonWrapper link="https://twitter.com/NugrahaDiaz_">
-        <TwitterIcon width={20} />
-      </ButtonWrapper>
-      <ButtonWrapper link="mailto:diaznugraha00@gmail.com">
-        <GmailIcon width={20} />
-      </ButtonWrapper>
+      {contactCollections.map((contact) => {
+        return (
+          <ButtonWrapper key={contact.title} link={contact.link}>
+            {contact.icon as ReactElement}
+          </ButtonWrapper>
+        );
+      })}
     </div>
   );
 }
@@ -41,7 +36,7 @@ function ContactButtons() {
 function ButtonWrapper({
   children,
   link,
-}: PropsWithChildren & { link: string }) {
+}: PropsWithChildren & { link?: string }) {
   return (
     <motion.a
       whileHover={{

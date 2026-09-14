@@ -1,41 +1,6 @@
-import {
-  ButtonLink,
-  GithubIcon,
-  GmailIcon,
-  LinkedinIcon,
-  MainLayout,
-  MotionSection,
-  TwitterIcon,
-} from "@/components";
-import { CommonItem } from "@/types";
+import { ButtonLink, MainLayout, MotionSection } from "@/components";
+import { contactCollections } from "@/constants";
 import { PropsWithChildren } from "react";
-
-const contactItems: CommonItem[] = [
-  {
-    title: "Github",
-    description: "https://github.com/DiazNugraha",
-    link: "https://github.com/DiazNugraha",
-    icon: <GithubIcon />,
-  },
-  {
-    title: "LinkedIn",
-    description: "https://www.linkedin.com/in/diaz-nugraha-820342246/",
-    link: "https://www.linkedin.com/in/diaz-nugraha-820342246/",
-    icon: <LinkedinIcon />,
-  },
-  {
-    title: "X",
-    description: "https://twitter.com/NugrahaDiaz_",
-    link: "https://twitter.com/NugrahaDiaz_",
-    icon: <TwitterIcon />,
-  },
-  {
-    title: "Email",
-    description: "mailto:diaznugraha00@gmail.com",
-    link: "mailto:diaznugraha00@gmail.com",
-    icon: <GmailIcon />,
-  },
-];
 
 export default function Contact() {
   return (
@@ -47,7 +12,7 @@ export default function Contact() {
         </p>
       </MotionSection>
       <MotionSection className="w-full flex flex-col gap-5">
-        {contactItems.map((contact) => (
+        {contactCollections.map((contact) => (
           <ButtonLink
             name={contact.title}
             description={contact.description}
