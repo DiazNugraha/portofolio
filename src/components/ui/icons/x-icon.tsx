@@ -6,7 +6,7 @@ export default function XIcon(props: SVGProps<SVGSVGElement>) {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1024 1024"
       fill="currentColor"
-      fill-rule="evenodd"
+      fillRule="evenodd"
       width="24"
       height="24"
       color="black"
