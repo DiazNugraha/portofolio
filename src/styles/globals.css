@@ -20,8 +20,30 @@ body {
   background-color: black;
 }
 
+.prose table {
+  @apply w-full bg-slate-700;
+}
+
+.prose thead {
+  @apply border-b;
+}
+
+.prose th {
+  @apply px-4 py-2 text-left font-semibold;
+}
+
+.prose td {
+  @apply border-b px-4 py-2;
+}
+
+.prose pre {
+  @apply bg-slate-700;
+}
+
 @layer base {
-  ul, ol {
+  ul,
+  ol {
     list-style: revert;
   }
 }
+
