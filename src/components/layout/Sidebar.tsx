@@ -28,6 +28,8 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   const checkIsSelected = (path: string) => {
+    if (!pathname) return false;
+
     const splittedPathname = pathname.split("/");
     return splittedPathname[1] === path;
   };
