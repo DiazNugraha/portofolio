@@ -36,7 +36,7 @@ export default function ProjectSection() {
             stiffness: 300,
             damping: 20,
           }}
-          href={""}
+          href={"/project"}
           className="flex gap-2 items-center text-slate-600 hover:text-white"
         >
           <span className="text-inherit">View More</span>
