@@ -1,6 +1,47 @@
-import { CommonItem } from "@/types/common";
+import { CommonItem, IMenuNavigation } from "@/types/common";
+import {
+  CpuIcon,
+  HomeIcon,
+  KeyboardIcon,
+  MailOpenIcon,
+  NotebookPenIcon,
+  SquareKanbanIcon,
+} from "lucide-react";
 
-export const MenuNavigations: CommonItem[] = [
+export const menuNavigations: IMenuNavigation[] = [
+  {
+    icon: HomeIcon,
+    url: "/",
+    label: "Home",
+  },
+  {
+    icon: SquareKanbanIcon,
+    url: "/project",
+    label: "Projects",
+  },
+  {
+    icon: CpuIcon,
+    url: "/technology",
+    label: "Tech Stack",
+  },
+  {
+    icon: KeyboardIcon,
+    url: "/tool",
+    label: "Toolstack",
+  },
+  {
+    icon: NotebookPenIcon,
+    url: "/blog",
+    label: "Blog",
+  },
+  {
+    icon: MailOpenIcon,
+    url: "/contact",
+    label: "Contact",
+  },
+];
+
+export const menuNavigations2: CommonItem[] = [
   {
     title: "Apps",
     description: "A collection of service and apps I use for day to day",

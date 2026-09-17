@@ -1,13 +1,5 @@
-import HomePage from "@/components/home";
-import { Inter } from "next/font/google";
+import { Home } from "@/features";
 
-
-const inter = Inter({ subsets: ["latin"] });
-
-export default function Home() {
-  return (
-    <main className="">      
-      <HomePage />
-    </main>
-  );
+export default function HomePage() {
+  return <Home />;
 }

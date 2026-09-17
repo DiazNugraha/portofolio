@@ -1,0 +1,11 @@
+import { MainLayout } from "@/components";
+
+export default function About() {
+  return (
+    <MainLayout>
+      <h1 className="w-full text-start text-lg lg:text-3xl">
+        {"Hi 👋 I'm Diaz and I like building my ideas."}
+      </h1>
+    </MainLayout>
+  );
+}

@@ -1,14 +1,18 @@
+import { LenisProvider } from "@/providers";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-import { Roboto_Condensed } from "next/font/google";
-const roboto = Roboto_Condensed({
+import { Work_Sans } from "next/font/google";
+
+const workSans = Work_Sans({
   subsets: ["latin"],
-  weight: "400",
 });
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={roboto.className}>
-      <Component {...pageProps} />
+    <main className={workSans.className}>
+      <LenisProvider>
+        <Component {...pageProps} />
+      </LenisProvider>
     </main>
   );
 }
