@@ -72,3 +72,37 @@ export const EXPERIENCES: ExperienceItem[] = [
     ],
   },
 ];
+
+export const experienceCollections: {
+  title: string;
+  imageUrl?: string;
+  subtitle?: string;
+  description?: string;
+  industryDomain?: string;
+  link?: string;
+}[] = [
+  {
+    title: "International Centre for Industrial Transformation (INCIT)",
+    subtitle: "Full Stack Developer · Aug 2024 — Jun 2026",
+    description:
+      "Developed and maintained enterprise web applications, contributing to frontend and backend development accross multiple platform modules.",
+    industryDomain: "Enterprise Software · Full-time",
+    link: "https://incit.org/",
+  },
+  {
+    title: "PT APPLIMETIS PARAMA SOLUTION",
+    subtitle: "Full Stack Developer · Nov 2022 — Mar 2024",
+    description:
+      "Developed and maintained enterprise web applications, contributing to frontend and backend development across multiple services and third-party integrations.",
+    industryDomain: "Healthcare Information Technology · Full-time",
+    link: "https://applimetis.id/",
+  },
+  {
+    title: "PT Sangkuriang Internasional",
+    subtitle: "System Analyst · Jul 2021 — Dec 2021",
+    description:
+      "Responsible for draft software requirement specifications and review use cases derived from user stories.",
+    industryDomain: "Software Solution · Internship",
+    link: "https://sangkuriang.co.id/",
+  },
+];

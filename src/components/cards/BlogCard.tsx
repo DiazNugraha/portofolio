@@ -2,13 +2,13 @@ import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 
-interface ExperienceCardProps {
+interface IBlogCardProps {
   title: string;
   imageUrl?: string;
   subtitle?: string;
   description?: string;
+  badges?: string[];
   link?: string;
-  industryDomain?: string;
 }
 
 const cardVariants = {
@@ -49,14 +49,14 @@ const buttonVariants = {
 
 const MotionLink = motion(Link);
 
-export default function ExperienceCard({
+export default function BlogCard({
   title,
   imageUrl,
   subtitle,
   description,
+  badges,
   link,
-  industryDomain,
-}: ExperienceCardProps) {
+}: IBlogCardProps) {
   return (
     <MotionLink
       href={link ?? "#"}
@@ -68,7 +68,6 @@ export default function ExperienceCard({
         duration: 0.6,
         ease: "easeOut",
       }}
-      target="_blank"
     >
       <motion.div
         variants={hoverVariants}
@@ -80,12 +79,14 @@ export default function ExperienceCard({
           stiffness: 300,
           damping: 20,
         }}
-        className="w-full border border-slate-800 hover:border-slate-600 hover:cursor-pointer rounded-3xl p-5 text-white flex flex-col gap-5"
+        className="w-full border border-slate-800 hover:border-slate-600 rounded-3xl p-5 text-white flex flex-col gap-5"
       >
         <div className="flex flex-col lg:flex-row lg:justify-between">
           <div className="flex flex-col gap-1">
             <span className="font-semibold text-sm lg:text-base">{title}</span>
-            <span className="font-medium text-xs lg:text-sm">{subtitle}</span>
+            <span className="font-medium text-slate-500 text-xs lg:text-sm">
+              {subtitle}
+            </span>
           </div>
 
           <motion.button
@@ -102,8 +103,23 @@ export default function ExperienceCard({
 
         <p className="text-xs text-justify text-slate-500">{description}</p>
 
-        <h3 className="text-sm text-slate-500">{industryDomain}</h3>
+        <div className="flex flex-col lg:flex-row gap-2 items-start lg:items-center">
+          <span className="font-medium text-xs lg:text-sm">Topic:</span>
+          <div className="flex gap-2 pt-2">
+            {badges?.map((badge) => (
+              <Badge name={badge} key={badge} />
+            ))}
+          </div>
+        </div>
       </motion.div>
     </MotionLink>
+  );
+}
+
+function Badge({ name }: { name: string }) {
+  return (
+    <div className="flex items-center justify-center p-1 bg-slate-500 text-white w-fit text-[10px] lg:text-xs rounded-lg">
+      {name}
+    </div>
   );
 }

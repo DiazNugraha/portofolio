@@ -1,13 +1,10 @@
 import Image from "next/image";
 import { Globe } from "lucide-react";
 import Link from "next/link";
-import GithubIcon from "@/components/ui/icons/github-icon";
-import GmailIcon from "@/components/ui/icons/gmail-icons";
-import LinkedinIcon from "@/components/ui/icons/linkedin-icon";
-import TwitterIcon from "@/components/ui/icons/twitter-icon";
-import { PropsWithChildren } from "react";
+import React, { PropsWithChildren } from "react";
 import { motion } from "framer-motion";
 import { MotionSection } from "@/components";
+import { contactCollections } from "@/constants";
 
 export default function HeaderSection() {
   return (
@@ -46,19 +43,16 @@ export default function HeaderSection() {
 
 function ContactButtons() {
   return (
-    <div className="flex gap-x-4 justify-start w-full">
-      <ButtonWrapper link="https://github.com/DiazNugraha">
-        <GithubIcon width={12} />
-      </ButtonWrapper>
-      <ButtonWrapper link="https://www.linkedin.com/in/diaz-nugraha-820342246/">
-        <LinkedinIcon width={12} />
-      </ButtonWrapper>
-      <ButtonWrapper link="https://twitter.com/NugrahaDiaz_">
-        <TwitterIcon width={12} />
-      </ButtonWrapper>
-      <ButtonWrapper link="mailto:diaznugraha00@gmail.com">
-        <GmailIcon width={12} />
-      </ButtonWrapper>
+    <div className="flex gap-x-3 justify-start w-full">
+      {contactCollections.map((contact) => {
+        return (
+          <ButtonWrapper key={contact.title} link={contact.link}>
+            {React.cloneElement(contact.icon as React.ReactElement, {
+              width: 12,
+            })}
+          </ButtonWrapper>
+        );
+      })}
     </div>
   );
 }
@@ -66,7 +60,7 @@ function ContactButtons() {
 function ButtonWrapper({
   children,
   link,
-}: PropsWithChildren & { link: string }) {
+}: PropsWithChildren & { link?: string }) {
   return (
     <motion.a
       whileHover={{
@@ -82,7 +76,7 @@ function ButtonWrapper({
       }}
       href={link}
       target="_blank"
-      className="rounded-full bg-slate-300  h-5 w-5 flex items-center justify-center"
+      className="rounded-full bg-slate-300 h-5 w-5 flex items-center justify-center"
     >
       {children}
     </motion.a>
