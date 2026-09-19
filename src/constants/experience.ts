@@ -97,4 +97,12 @@ export const experienceCollections: {
     industryDomain: "Healthcare Information Technology · Full-time",
     link: "https://applimetis.id/",
   },
+  {
+    title: "PT Sangkuriang Internasional",
+    subtitle: "System Analyst · Jul 2021 — Dec 2021",
+    description:
+      "Responsible for draft software requirement specifications and review use cases derived from user stories.",
+    industryDomain: "Software Solution · Internship",
+    link: "https://sangkuriang.co.id/",
+  },
 ];
