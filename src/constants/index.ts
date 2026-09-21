@@ -3,3 +3,4 @@ export * from "./navigations";
 export * from "./common";
 export * from "./project";
 export * from "./blog";
+export * from "./skill";
