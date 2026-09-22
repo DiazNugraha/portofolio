@@ -24,8 +24,16 @@ body {
   @apply w-full bg-slate-700;
 }
 
+.prose p {
+  @apply text-justify;
+}
+
 .prose thead {
   @apply border-b;
+}
+
+.prose li {
+  @apply text-justify;
 }
 
 .prose th {
@@ -46,4 +54,3 @@ body {
     list-style: revert;
   }
 }
-
