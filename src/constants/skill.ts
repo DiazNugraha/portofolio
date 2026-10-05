@@ -37,6 +37,11 @@ export const skillCollections: ISkillCollection[] = [
         description: "The utility-first CSS Framework",
         link: "https://tailwindcss.com/",
       },
+      {
+        title: "React Native",
+        description: "React JS framework for mobile application",
+        link: "https://reactnative.dev/",
+      },
     ],
   },
   {
