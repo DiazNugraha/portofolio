@@ -27,4 +27,12 @@ export const blogCollections: {
     badges: ["Node JS", "Smart Contract", "Note"],
     link: "blog/nodejs-smart-contract",
   },
+  {
+    title: "React JS Tolgee Integration",
+    subtitle: "20 May 2026",
+    description:
+      "Implementation of Tolgee localization platform with React JS.",
+    badges: ["React JS", "Tolgee", "Tutorial"],
+    link: "blog/reactjs-tolgee",
+  },
 ];
