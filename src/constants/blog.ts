@@ -20,4 +20,11 @@ export const blogCollections: {
     badges: ["Nest JS", "Typescript", "Message Queue", "Tutorial"],
     link: "blog/setup-bullmq-nest",
   },
+  {
+    title: "Node JS Smart Contract",
+    subtitle: "20 May 2023",
+    description: "My Learning Note of Node JS Smart Contract Implementation.",
+    badges: ["Node JS", "Smart Contract", "Note"],
+    link: "blog/nodejs-smart-contract",
+  },
 ];
