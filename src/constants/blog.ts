@@ -7,10 +7,10 @@ export const blogCollections: {
   link?: string;
 }[] = [
   {
-    title: "Example",
-    subtitle: "22 July 2077",
-    description: "example writing",
-    badges: ["React", "Vite"],
-    link: "blog/example",
+    title: "PDFMake TS",
+    subtitle: "22 November 2023",
+    description: "A tutorial of PDFMake installation for Typescript.",
+    badges: ["Nest JS", "Typescript", "Document", "Tutorial"],
+    link: "blog/pdfmake-ts",
   },
 ];
