@@ -7,6 +7,28 @@ export const blogCollections: {
   link?: string;
 }[] = [
   {
+    title: "React JS Vite Plugin Federation",
+    subtitle: "22 July 2026",
+    description:
+      "vite-plugin-federation is a library for micro frontend implementation from Vite. This is what I have implemented in React JS.",
+    badges: [
+      "React JS",
+      "Vite",
+      "vite-plugin-federation",
+      "Micro Frontend",
+      "Tutorial",
+    ],
+    link: "blog/reactjs-vite-plugin-federation",
+  },
+  {
+    title: "React JS Tolgee Integration",
+    subtitle: "20 May 2026",
+    description:
+      "Implementation of Tolgee localization platform with React JS.",
+    badges: ["React JS", "Tolgee", "Tutorial"],
+    link: "blog/reactjs-tolgee",
+  },
+  {
     title: "PDFMake TS",
     subtitle: "22 November 2023",
     description: "A tutorial of PDFMake installation for Typescript.",
@@ -26,13 +48,5 @@ export const blogCollections: {
     description: "My Learning Note of Node JS Smart Contract Implementation.",
     badges: ["Node JS", "Smart Contract", "Note"],
     link: "blog/nodejs-smart-contract",
-  },
-  {
-    title: "React JS Tolgee Integration",
-    subtitle: "20 May 2026",
-    description:
-      "Implementation of Tolgee localization platform with React JS.",
-    badges: ["React JS", "Tolgee", "Tutorial"],
-    link: "blog/reactjs-tolgee",
   },
 ];
