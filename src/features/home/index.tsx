@@ -1,6 +1,7 @@
 import { MainLayout } from "@/components";
 import {
   AboutSection,
+  BlogSection,
   ExperienceSection,
   HeaderSection,
   ProjectSection,
@@ -15,6 +16,7 @@ export default function Home() {
       <ExperienceSection />
       <ProjectSection />
       <SkillSection />
+      <BlogSection />
     </MainLayout>
   );
 }

@@ -1,6 +1,5 @@
-import { MotionSection } from "@/components";
-import { ProjectCard } from "@/components/cards";
-import { projectCollections } from "@/constants";
+import { BlogCard, MotionSection } from "@/components";
+import { blogCollections } from "@/constants";
 import { motion } from "framer-motion";
 import { ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
@@ -18,13 +17,13 @@ const hoverVariants = {
   },
 };
 
-export default function ProjectSection() {
+export default function BlogSection() {
   return (
     <MotionSection className="flex flex-col gap-2">
-      <h1 className="text-lg lg:text-xl font-semibold">Selected Projects</h1>
+      <h1 className="text-lg lg:text-xl font-semibold">My Blogs</h1>
       <div className="flex flex-col gap-3">
-        {projectCollections.slice(0, 3).map((project, index) => (
-          <ProjectCard {...project} key={index} />
+        {blogCollections.slice(0, 3).map((blog, index) => (
+          <BlogCard {...blog} key={index} />
         ))}
         <MotionLink
           variants={hoverVariants}
@@ -36,7 +35,7 @@ export default function ProjectSection() {
             stiffness: 300,
             damping: 20,
           }}
-          href={"/project"}
+          href={"/blog"}
           className="flex gap-2 items-center text-slate-600 hover:text-white"
         >
           <span className="text-inherit">View More</span>

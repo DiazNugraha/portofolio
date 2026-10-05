@@ -4,3 +4,4 @@ export { default as NavigationSection } from "./NavigationSection";
 export { default as ExperienceSection } from "./ExperienceSection";
 export { default as SkillSection } from "./SkillSection";
 export { default as ProjectSection } from "./ProjectSection";
+export { default as BlogSection } from "./BlogSection";
