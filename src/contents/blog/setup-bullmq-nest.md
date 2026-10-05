@@ -1,10 +1,9 @@
 # Setup BullMQ Nest Js
 
-1. add processor ex: ReportsProcessor
-   create reports.processor.ts
+1. add processor example: ReportsProcessor.
+   - create file reports.processor.ts
 
-```
-
+```jsx
 @Processor(’reports’)
 export class ReportsProcessor {
   @Process(’transcode’)
@@ -12,13 +11,11 @@ export class ReportsProcessor {
     // queue task
   }
 }
-
 ```
 
-1. import BullModule and Processor
+2. import BullModule and Processor.
 
-```
-
+```jsx
 imports: [
   // import BullModule
   BullModule.forRoot({
@@ -32,19 +29,21 @@ imports: [
   })
 ],
 providers: [ ReportsProcessor ]
-
 ```
 
-1. Inject queue into service
-   add `@InjectQueue(’reports’) private readonly reportsQueue: Queue` // reports is the name of the processor’s name
+3. Inject queue into service.
+   add this:
 
-2. send data to queue
+```jsx
+@InjectQueue(’reports’) private readonly reportsQueue: Queue`
+```
 
-````
+"reports" is the name of the processor’s name.
 
+4. send data to queue.
+
+```jsx
 await this.reportsQueue.add(’transcode’, {
   file: ‘anything’
 })
-
-```%
-````
+```

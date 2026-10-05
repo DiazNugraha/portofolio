@@ -4,14 +4,14 @@ Why should i write this?
 
 The reason, i can’t find any tutorial for making PDFMake running on typescript.
 
-For the example, i will use nest js. because it natively using typescript on it’s base program
+For the example, i will use nest js. because it natively using typescript on it’s base program.
 
 ```bash
 $ npm i -g @nestjs/cli
 $ nest new project-name
 ```
 
-I will use these library
+I will use these library:
 
 ```
 "html-to-pdfmake": "^2.4.25",
@@ -27,7 +27,7 @@ Create folder and file that will do the process of pdf generating. I will add it
 mkdir etc/print-pdf.ts
 ```
 
-And I will add asset folder that will contains fonts, images, etc. I will make the folder outside of the src folder because it has different context
+And I will add asset folder that will contains fonts, images, etc. I will make the folder outside of the src folder because it has different context.
 
 ```
 mkdir assets/fonts
@@ -38,7 +38,7 @@ For example, if I want to add Century Gothic font, I just simply add century-got
 
 Then, let’s do it…..
 
-First I will create PrintPDF function inside **print-pdf.ts**
+First I will create PrintPDF function inside **print-pdf.ts**.
 
 ```
 export default function PrintPDf() {
@@ -79,7 +79,7 @@ const tableLayouts = {
   };
 ```
 
-Now, if you want to use some fonts other than the default font that already provided by pdfmake or if you want to add some images you can add it inside **VFS**
+Now, if you want to use some fonts other than the default font that already provided by pdfmake or if you want to add some images you can add it inside **VFS**.
 
 ```
 const pdfMakeConstants = {
@@ -93,61 +93,13 @@ const pdfMakeConstants = {
           'assets/fonts/century-gothic/GOTHIC.woff',
         ),
       ),
-      'fonts/century-gothic/GOTHICB.woff': await fs.promises.readFile(
-        path.join(
-          __dirname,
-          '..',
-          '..',
-          '..',
-          'assets/fonts/century-gothic/GOTHICB.woff',
-        ),
-      ),
-      'fonts/century-gothic/GOTHICBI.woff': await fs.promises.readFile(
-        path.join(
-          __dirname,
-          '..',
-          '..',
-          '..',
-          'assets/fonts/century-gothic/GOTHICBI.woff',
-        ),
-      ),
-      'fonts/century-gothic/GOTHICI.woff': await fs.promises.readFile(
-        path.join(
-          __dirname,
-          '..',
-          '..',
-          '..',
-          'assets/fonts/century-gothic/GOTHICI.woff',
-        ),
-      ),
-      'fonts/Urbanist/Urbanist-Regular.ttf': await fs.promises.readFile(
-        path.join(
-          __dirname,
-          '..',
-          '..',
-          '..',
-          'assets/fonts/Urbanist/Urbanist-Regular.ttf',
-        ),
-      ),
-      'logo_white.png': await fs.promises.readFile(
-        path.join(
-          __dirname,
-          '..',
-          '..',
-          '..',
-          process.env.LOGO_WHITE_PATH as string,
-        ),
-      ),
-      'logo_red.png': await fs.promises.readFile(
-        path.join(__dirname, '..', '..', '..', process.env.LOGO_PATH as string),
-      ),
     },
   };
 ```
 
 We will add it to PDFMake VFS later…
 
-Then we will create variable to contains all the fonts with **TFontDictionary** type. It’s imported from ‘pdfmake/interfaces’
+Then we will create variable to contains all the fonts with **TFontDictionary** type. It’s imported from ‘pdfmake/interfaces’.
 
 ```
 const fonts: TFontDictionary = {
@@ -163,7 +115,7 @@ const fonts: TFontDictionary = {
   };
 ```
 
-create the doc definition
+create the doc definition.
 
 ```
 const docDefinition = {
@@ -181,7 +133,7 @@ const docDefinition = {
 }
 ```
 
-Now it’s the time for assign the fonts and constants to VFS. we will use pdfFonts library from 'pdfmake/build/vfs_fonts’ and we assign the fonts that we’ve create above
+Now it’s the time for assign the fonts and constants to VFS. we will use pdfFonts library from 'pdfmake/build/vfs_fonts’ and we assign the fonts that we’ve create above.
 
 ```
 pdfFonts.pdfMake.vfs = Object.assign(
