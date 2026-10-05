@@ -13,4 +13,11 @@ export const blogCollections: {
     badges: ["Nest JS", "Typescript", "Document", "Tutorial"],
     link: "blog/pdfmake-ts",
   },
+  {
+    title: "Setup BullMQ Nest JS",
+    subtitle: "22 November 2023",
+    description: "Tutorial for Setting up Bull Message Queue from Nest JS.",
+    badges: ["Nest JS", "Typescript", "Message Queue", "Tutorial"],
+    link: "blog/setup-bullmq-nest",
+  },
 ];
