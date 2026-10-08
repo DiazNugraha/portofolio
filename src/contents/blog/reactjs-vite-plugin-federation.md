@@ -4,7 +4,7 @@
 
 1. install originjs/vite-plugin-federation library.
 
-```jsx
+```bash
 npm i @originjs/vite-plugin-federation
 ```
 
@@ -60,7 +60,7 @@ server: {
 
 1. install the same library.
 
-```jsx
+```bash
 npm i @originjs/vite-plugin-federation
 ```
 
