@@ -2,6 +2,14 @@ const withMDX = require("@next/mdx")({
   extension: /\.mdx?$/,
   options: {
     remarkPlugins: ["remark-gfm"],
+    rehypePlugins: [
+      [
+        "rehype-pretty-code",
+        {
+          theme: "github-dark",
+        },
+      ],
+    ],
   },
 });
 

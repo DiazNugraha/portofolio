@@ -13,23 +13,23 @@ $ nest new project-name
 
 I will use these library:
 
-```
+```js
 "html-to-pdfmake": "^2.4.25",
 "html-to-text": "^9.0.5",
 "jsdom": "^22.1.0",
 "pdf-lib": "^1.17.1",
-*"pdfmake": "^0.2.7", // npm install --save @types/pdfmake*
+"pdfmake": "^0.2.7", // npm install --save @types/pdfmake*
 ```
 
 Create folder and file that will do the process of pdf generating. I will add it inside src, so it can be included inside the dist directory after compilation.
 
-```
+```bash
 mkdir etc/print-pdf.ts
 ```
 
 And I will add asset folder that will contains fonts, images, etc. I will make the folder outside of the src folder because it has different context.
 
-```
+```bash
 mkdir assets/fonts
 mkdir assets/images
 ```
@@ -40,15 +40,15 @@ Then, let’s do it…..
 
 First I will create PrintPDF function inside **print-pdf.ts**.
 
-```
+```js
 export default function PrintPDf() {
-    // ... the code goes here
+  // ... the code goes here
 }
 ```
 
 then, create some custom layout.
 
-```
+```js
 const tableLayouts = {
     customLayout: {
       body: [
@@ -81,27 +81,27 @@ const tableLayouts = {
 
 Now, if you want to use some fonts other than the default font that already provided by pdfmake or if you want to add some images you can add it inside **VFS**.
 
-```
+```js
 const pdfMakeConstants = {
-    VFS: {
-      'fonts/century-gothic/GOTHIC.woff': await fs.promises.readFile(
-        path.join(
-          __dirname,
-          '..',
-          '..',
-          '..',
-          'assets/fonts/century-gothic/GOTHIC.woff',
-        ),
+  VFS: {
+    "fonts/century-gothic/GOTHIC.woff": await fs.promises.readFile(
+      path.join(
+        __dirname,
+        "..",
+        "..",
+        "..",
+        "assets/fonts/century-gothic/GOTHIC.woff",
       ),
-    },
-  };
+    ),
+  },
+};
 ```
 
 We will add it to PDFMake VFS later…
 
 Then we will create variable to contains all the fonts with **TFontDictionary** type. It’s imported from ‘pdfmake/interfaces’.
 
-```
+```js
 const fonts: TFontDictionary = {
     CenturyGothic: {
       normal: 'fonts/century-gothic/GOTHIC.woff',
@@ -117,7 +117,7 @@ const fonts: TFontDictionary = {
 
 create the doc definition.
 
-```
+```js
 const docDefinition = {
 	paperSize: ....,
 	defaultStyle: {
@@ -135,17 +135,17 @@ const docDefinition = {
 
 Now it’s the time for assign the fonts and constants to VFS. we will use pdfFonts library from 'pdfmake/build/vfs_fonts’ and we assign the fonts that we’ve create above.
 
-```
+```js
 pdfFonts.pdfMake.vfs = Object.assign(
-    {},
-    pdfFonts.pdfMake.vfs,
-    pdfMakeConstants.VFS,
-  );
+  {},
+  pdfFonts.pdfMake.vfs,
+  pdfMakeConstants.VFS,
+);
 ```
 
 For the final, we will generate the docDefinition including all layouts, fonts, and the vfs. We will use library pdfMake from 'pdfmake/build/pdfmake’.
 
-```
+```js
 const pdfDoc = pdfMake.createPdf(
     docDefinition as TDocumentDefinitions,
     tableLayouts,
@@ -158,13 +158,13 @@ The createPdf function above is for generaing the code we’ve type before into 
 
 After that, we have to generate it into buffer. Because of that we will add one utility for that. Let’s create folder common/utils and create pdf.utils.ts file. I will make it inside src.
 
-```
+```bash
 mkdir common/utils
 cd common/utils
 touch pdf.utils.ts
 ```
 
-```
+```js
 export async function generateBuffer(pdfDoc: pdfMake.TCreatedPdf) {
   const buffer = await new Promise<Buffer>((resolve, reject) => {
     pdfDoc.getBuffer((buffer: Buffer) => {
