@@ -1,13 +1,16 @@
 import { PropsWithChildren, useEffect, useMemo, useState } from "react";
 import { Footer, HamburgerMenu, Sidebar } from ".";
+import { cn } from "@/utils/cn";
 
 interface IMainLayoutProps {
   hideFooter?: boolean;
+  className?: string;
 }
 
 export default function MainLayout({
   hideFooter = false,
   children,
+  className,
 }: IMainLayoutProps & PropsWithChildren) {
   const [screenSize, setScreenSize] = useState<number | undefined>(undefined);
 
@@ -26,7 +29,12 @@ export default function MainLayout({
   return (
     <div className="w-full h-full flex justify-center relative">
       <div className="lg:w-[30%] h-full">
-        <div className="flex px-5 py-36 text-white flex-col items-center gap-y-20">
+        <div
+          className={cn(
+            "flex px-5 py-36 text-white flex-col items-center gap-y-20",
+            className,
+          )}
+        >
           {children}
           {!hideFooter && <Footer />}
         </div>
